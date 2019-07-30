@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*
+from PyQt5.QtWidgets import QWidget,QRadioButton, QPushButton,QProgressBar,QLabel,QLineEdit
+
+class FeatureDialog(object):
+    def initUI(self):
+        self.chooseImageBtn = QPushButton("..", self)
+        self.lineTextImage = QLineEdit("Image Path",self)
+        self.imageLabel = QLabel("Image",self)
+        self.imageLabel.move(30,30)
+        self.imageLabel.resize(30,25)
+        self.lineTextImage.move(100,30)
+        self.lineTextImage.resize(200,25)
+        self.chooseImageBtn.resize(20,25)
+        self.chooseImageBtn.move(300, 30)
+        self.chooseMaskBtn = QPushButton("..", self)
+        self.lineTextMask = QLineEdit("ROI Path", self)
+        self.labelMask = QLabel("ROI",self)
+        self.labelMask.move(30, 80)
+        self.labelMask.resize(30,25)
+        self.lineTextMask.resize(200,25)
+        self.lineTextMask.move(100, 80)
+        self.chooseMaskBtn.resize(20, 25)
+        self.chooseMaskBtn.move(300, 80)
+
+        btn3 = QPushButton("..", self)
+        self.in3 = QLineEdit("Output File Path", self)
+        lb3 = QLabel("Output ", self)
+        lb3.move(30, 130)
+        lb3.resize(30,25)
+        self.in3.resize(200,25)
+        self.in3.move(100, 130)
+        btn3.move(300, 130)
+        btn3.resize(20,25)
+        self.btn4 = QPushButton("Start!",self)
+        self.btn4.move(160,250)
+
+        label = QLabel("Process：",self)
+        label.move(30,180)
+        self.pbar = QProgressBar(self)
+        self.pbar.setGeometry(100, 180, 230, 25)
+        self.chooseImageBtn.clicked.connect(self.chooseImage)
+        self.chooseMaskBtn.clicked.connect(self.chooseMask)
+        btn3.clicked.connect(self.outputFile)
+        self.btn4.clicked.connect(self.runCal)
+        self.lineTextImage.setReadOnly(True)
+        self.lineTextMask.setReadOnly(True)
+        self.in3.setReadOnly(True)
+        self.fileRadiobtn = QRadioButton("Single File",self)
+        self.dirRadiobtn = QRadioButton("Directory batch",self)
+        self.fileRadiobtn.move(10,10)
+        self.dirRadiobtn.move(200,10)
+        self.fileRadiobtn.setChecked(True)
+        # self.statusBar()
+        self.setGeometry(300, 300,370, 300)
+        self.setWindowTitle('Feature Calculate Toolbox')
+
+

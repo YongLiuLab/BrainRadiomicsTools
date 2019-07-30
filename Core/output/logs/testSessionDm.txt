@@ -1,0 +1,1167 @@
+2019-5-8 11:11:50.36: =============================== logger created =======================================
+2019-5-8 11:11:50.36: 
+2019-5-8 11:11:50.36: ======================== Starting new session ============================
+2019-5-8 11:11:50.37: CONFIG: The configuration file for the [model] given is: D:\Develope\z\Brain\Core\hippoSegMedic\./config/modelConfig.cfg
+2019-5-8 11:11:50.37: =============================================================
+2019-5-8 11:11:50.37: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2019-5-8 11:11:50.37: =============================================================
+2019-5-8 11:11:50.37: CNN model's name = deepMedic
+2019-5-8 11:11:50.38: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2019-5-8 11:11:50.38: Number of Classes (including background) = 3
+2019-5-8 11:11:50.38: ~~Normal Pathway~~
+2019-5-8 11:11:50.38: Number of Input Channels = 1
+2019-5-8 11:11:50.38: Number of Layers = 8
+2019-5-8 11:11:50.39: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2019-5-8 11:11:50.39: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 11:11:50.39: Receptive Field = [17, 17, 17]
+2019-5-8 11:11:50.39: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 11:11:50.39: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 11:11:50.40: Lower Rank layers will be made of rank = []
+2019-5-8 11:11:50.40: ~~Subsampled Pathway~~
+2019-5-8 11:11:50.40: Use subsampled Pathway = True
+2019-5-8 11:11:50.40: Number of subsampled pathways that will be built = 2
+2019-5-8 11:11:50.40: Number of Layers (per sub-pathway) = [8, 8]
+2019-5-8 11:11:50.41: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2019-5-8 11:11:50.41: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 11:11:50.41: Receptive Field = [17, 17, 17]
+2019-5-8 11:11:50.41: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2019-5-8 11:11:50.41: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 11:11:50.42: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 11:11:50.42: Lower Rank layers will be made of rank = []
+2019-5-8 11:11:50.42: ~~Fully Connected Pathway~~
+2019-5-8 11:11:50.42: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2019-5-8 11:11:50.42: Number of Feature Maps in the additional FC layers = [250, 250]
+2019-5-8 11:11:50.43: Residual connections added at the output of layers (indices from 0) = [1]
+2019-5-8 11:11:50.43: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 11:11:50.43: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2019-5-8 11:11:50.43: ~~Size Of Image Segments~~
+2019-5-8 11:11:50.44: Size of Segments for Training = [37, 37, 37]
+2019-5-8 11:11:50.44: Size of Segments for Validation = [17, 17, 17]
+2019-5-8 11:11:50.44: Size of Segments for Testing = [45, 45, 45]
+2019-5-8 11:11:50.44: ~~Dropout Rates~~
+2019-5-8 11:11:50.45: Drop.R. for each layer in Normal Pathway = []
+2019-5-8 11:11:50.45: Drop.R. for each layer in Subsampled Pathway = []
+2019-5-8 11:11:50.45: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2019-5-8 11:11:50.45: ~~Weight Initialization~~
+2019-5-8 11:11:50.45: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2019-5-8 11:11:50.46: ~~Activation Function~~
+2019-5-8 11:11:50.46: Activation function to use = prelu
+2019-5-8 11:11:50.46: ~~Batch Normalization~~
+2019-5-8 11:11:50.47: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2019-5-8 11:11:50.47: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2019-5-8 11:11:50.47: ========== Done with printing session's parameters ==========
+2019-5-8 11:11:50.47: =============================================================
+2019-5-8 11:11:50.48: CONFIG: The configuration file for the [session] was loaded from: D:\Develope\z\Brain\Core\hippoSegMedic\./config/testConfig.cfg
+2019-5-8 11:11:50.48: 
+2019-5-8 11:11:50.48: ============     NEW TESTING SESSION    ===============
+2019-5-8 11:11:50.48: 
+2019-5-8 11:11:50.49: =============================================================
+2019-5-8 11:11:50.49: =========== PARAMETERS OF THIS TESTING SESSION ==============
+2019-5-8 11:11:50.49: =============================================================
+2019-5-8 11:11:50.49: sessionName = testSessionDm
+2019-5-8 11:11:50.50: Model will be loaded from save = D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 11:11:50.50: ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2019-5-8 11:11:50.50: Number of cases to perform inference on = 1
+2019-5-8 11:11:50.50: Paths to the channels of each case = [['I:\\DATA\\Seg_data\\XW_66_reg\\Clean_MiniMMSE\\NSN_r_TR_MR_02..nii']]
+2019-5-8 11:11:50.51: User provided Ground Truth labels for DSC calculation = False
+2019-5-8 11:11:50.51: >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2019-5-8 11:11:50.51: Paths to the provided GT labels per case = None
+2019-5-8 11:11:50.51: User provided Region-Of-Interest Masks for faster inference = False
+2019-5-8 11:11:50.52: Filepaths of the ROI Masks provided per case = None
+2019-5-8 11:11:50.52: >>> WARN: Inference will be performed on whole scan. Consider providing a ROI image for faster results, if possible!
+2019-5-8 11:11:50.52: Batch size = 10
+2019-5-8 11:11:50.52: ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2019-5-8 11:11:50.53: Path to the main output-folder = D:\Develope\z\Brain\Core\output
+2019-5-8 11:11:50.53: Provided names to use to save results for each case = ['NSN_r_TR_MR_02..nii']
+2019-5-8 11:11:50.53: ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2019-5-8 11:11:50.54: Save the predicted segmentation = True
+2019-5-8 11:11:50.54: Save the probability maps = [False, False, False]
+2019-5-8 11:11:50.54: Paths where to save predictions per case = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/predictions//NSN_r_TR_MR_02..nii']
+2019-5-8 11:11:50.54: Suffixes with which to save segmentations and probability maps = {'segm': 'Segm', 'prob': 'ProbMapClass'}
+2019-5-8 11:11:50.55: ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2019-5-8 11:11:50.55: Save FMs in individual images = False
+2019-5-8 11:11:50.55: Save all requested FMs in one 4D image = False
+2019-5-8 11:11:50.55: Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = None
+2019-5-8 11:11:50.56: Save Feature Maps at = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/features//NSN_r_TR_MR_02..nii']
+2019-5-8 11:11:50.56: ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2019-5-8 11:11:50.56: Pad Input Images = True
+2019-5-8 11:11:50.56: ========== Done with printing session's parameters ==========
+2019-5-8 11:11:50.57: =============================================================
+
+2019-5-8 11:11:50.57: =======================================================
+
+2019-5-8 11:11:50.58: =========== Making the CNN graph... ===============
+2019-5-8 11:11:50.58: ...Building the CNN model...
+2019-5-8 11:11:50.59: [Pathway_NORMAL] is being built...
+2019-5-8 11:11:50.59: 	[Pathway_NORMAL]: Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 11:11:50.60: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 11:11:50.60: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 11:11:50.61: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 11:11:50.62: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+2019-5-8 11:11:50.68: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 11:11:50.68: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+2019-5-8 11:11:50.74: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:50.74: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+2019-5-8 11:11:50.80: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 11:11:50.93: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:50.94: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+2019-5-8 11:11:51.00: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:51.00: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+2019-5-8 11:11:51.06: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 11:11:51.19: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 11:11:51.20: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+2019-5-8 11:11:51.26: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 11:11:51.26: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+2019-5-8 11:11:51.32: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 11:11:51.46: 	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+2019-5-8 11:11:51.47: [Pathway_NORMAL] done.
+2019-5-8 11:11:51.47: [Pathway_SUBSAMPLED[3, 3, 3]] is being built...
+2019-5-8 11:11:51.47: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 11:11:51.47: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 11:11:51.48: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 11:11:51.50: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 11:11:51.51: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 21, 21, 21], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 24, 24, 24]
+2019-5-8 11:11:51.56: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 11:11:51.56: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 22, 22, 22]
+2019-5-8 11:11:51.62: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:51.62: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 17, 17, 17], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 20, 20, 20]
+2019-5-8 11:11:51.68: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 11:11:51.85: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:51.85: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 18, 18, 18]
+2019-5-8 11:11:51.91: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:51.91: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 16, 16, 16]
+2019-5-8 11:11:51.97: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 11:11:52.11: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 11:11:52.12: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 14, 14, 14]
+2019-5-8 11:11:52.18: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 11:11:52.18: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 9, 9, 9], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 12, 12, 12]
+2019-5-8 11:11:52.24: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 11:11:52.38: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Output's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 10, 10, 10]
+2019-5-8 11:11:52.38: [Pathway_SUBSAMPLED[3, 3, 3]] done.
+2019-5-8 11:11:52.58: [Pathway_SUBSAMPLED[5, 5, 5]] is being built...
+2019-5-8 11:11:52.58: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 11:11:52.59: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 11:11:52.59: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 11:11:52.60: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 11:11:52.61: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 20, 20, 20]
+2019-5-8 11:11:52.66: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 11:11:52.67: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 17, 17, 17], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 18, 18, 18]
+2019-5-8 11:11:52.72: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:52.73: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 16, 16, 16]
+2019-5-8 11:11:52.79: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 11:11:52.95: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:52.95: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 14, 14, 14]
+2019-5-8 11:11:53.01: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 11:11:53.02: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 12, 12, 12]
+2019-5-8 11:11:53.08: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 11:11:53.25: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 11:11:53.25: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 9, 9, 9], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 10, 10, 10]
+2019-5-8 11:11:53.31: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 11:11:53.32: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 8, 8, 8]
+2019-5-8 11:11:53.38: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 11:11:53.51: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Output's Shape: (Train) [None, 50, 5, 5, 5], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 6, 6, 6]
+2019-5-8 11:11:53.51: [Pathway_SUBSAMPLED[5, 5, 5]] done.
+2019-5-8 11:11:53.70: DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
+2019-5-8 11:11:53.71: DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
+2019-5-8 11:11:53.75: [Pathway_FC] is being built...
+2019-5-8 11:11:53.75: 	[Pathway_FC]: Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 11:11:53.76: 	[Conv.Layer_0], Filter Shape: [250, 150, 3, 3, 3]
+2019-5-8 11:11:53.76: 	[Conv.Layer_0], Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 11:11:53.87: 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
+2019-5-8 11:11:53.87: 	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 11:11:53.94: 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
+2019-5-8 11:11:54.07: 	[Conv.Layer_2], Filter Shape: [3, 250, 1, 1, 1]
+2019-5-8 11:11:54.08: 	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 11:11:54.13: 	[Pathway_FC]: Output's Shape: (Train) [None, 3, 21, 21, 21], (Val) [None, 3, 1, 1, 1], (Test) [None, 3, 29, 29, 29]
+2019-5-8 11:11:54.14: [Pathway_FC] done.
+2019-5-8 11:11:54.14: Adding the final Softmax Target layer...
+2019-5-8 11:11:54.19: Finished building the CNN's model.
+2019-5-8 11:11:54.19: =========== Compiling the Testing Function ============
+2019-5-8 11:11:54.19: =======================================================
+
+2019-5-8 11:11:54.20: ...Building the function for testing and visualisation of FMs...
+2019-5-8 11:11:54.20: ...Collecting ops and feeds for testing...
+2019-5-8 11:11:54.20: Done.
+2019-5-8 11:11:54.34: =========== Loading parameters from specified saved model ===============
+2019-5-8 11:11:54.34: Loading parameters from:D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 11:11:54.57: Parameters were loaded.
+2019-5-8 11:11:54.58: 
+2019-5-8 11:11:54.58: ======================================================
+2019-5-8 11:11:54.58: =========== Testing with the CNN model ===============
+2019-5-8 11:11:54.59: ======================================================
+
+2019-5-8 11:11:54.59: ###########################################################################################################
+2019-5-8 11:11:54.59: ############################# Starting full Segmentation of Testing subjects ##########################
+2019-5-8 11:11:54.59: ###########################################################################################################
+2019-5-8 11:11:54.60: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2019-5-8 11:11:54.60: ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2019-5-8 11:11:54.60: Loading subject with 1st channel at: I:\DATA\Seg_data\XW_66_reg\Clean_MiniMMSE\NSN_r_TR_MR_02..nii
+2019-5-8 11:11:57.17: Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2019-5-8 11:11:57.17: Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2019-5-8 11:11:57.17: Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2019-5-8 11:11:57.18: Total number of Segments to process:400
+2019-5-8 11:11:57.18: Processed 10/400 segments.
+2019-5-8 11:14:14.36: Processed 80/400 segments.
+2019-5-8 11:16:52.67: Processed 160/400 segments.
+2019-5-8 11:19:31.03: Processed 240/400 segments.
+2019-5-8 11:22:9.10: Processed 320/400 segments.
+2019-5-8 11:24:46.78: Processed 400/400 segments.
+2019-5-8 11:25:6.58: TIMING: Segmentation of subject: [Extracting:] 0.11 [Loading:] 0.13 [ForwardPass:] 789.05 [Total:] 789.29 secs.
+2019-5-8 11:25:6.75: Saving the new label (segmentation) image for the subject #0
+2019-5-8 11:25:6.82: Image saved at: D:\Develope\z\Brain\Core\output\predictions\testSessionDm\predictions\NSN_r_TR_MR_02._Segm.nii.gz
+2019-5-8 11:25:6.83: TIMING: Testing process lasted: 792.23 secs.
+2019-5-8 11:25:6.83: ###########################################################################################################
+2019-5-8 11:25:6.83: ############################# Finished full Segmentation of Testing subjects ##########################
+2019-5-8 11:25:6.83: ###########################################################################################################
+2019-5-8 11:25:6.89: 
+2019-5-8 11:25:6.89: ======================================================
+2019-5-8 11:25:6.89: =========== Testing session finished =================
+2019-5-8 11:25:6.90: ======================================================
+2019-5-8 11:25:6.90: Finished.
+2019-5-8 13:3:26.20: =============================== logger created =======================================
+2019-5-8 13:3:26.20: 
+2019-5-8 13:3:26.21: ======================== Starting new session ============================
+2019-5-8 13:3:26.21: CONFIG: The configuration file for the [model] given is: D:\Develope\z\Brain\Core\hippoSegMedic\./config/modelConfig.cfg
+2019-5-8 13:3:26.21: =============================================================
+2019-5-8 13:3:26.21: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2019-5-8 13:3:26.22: =============================================================
+2019-5-8 13:3:26.22: CNN model's name = deepMedic
+2019-5-8 13:3:26.22: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2019-5-8 13:3:26.22: Number of Classes (including background) = 3
+2019-5-8 13:3:26.23: ~~Normal Pathway~~
+2019-5-8 13:3:26.23: Number of Input Channels = 1
+2019-5-8 13:3:26.23: Number of Layers = 8
+2019-5-8 13:3:26.23: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2019-5-8 13:3:26.24: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 13:3:26.24: Receptive Field = [17, 17, 17]
+2019-5-8 13:3:26.24: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 13:3:26.24: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 13:3:26.25: Lower Rank layers will be made of rank = []
+2019-5-8 13:3:26.25: ~~Subsampled Pathway~~
+2019-5-8 13:3:26.25: Use subsampled Pathway = True
+2019-5-8 13:3:26.25: Number of subsampled pathways that will be built = 2
+2019-5-8 13:3:26.26: Number of Layers (per sub-pathway) = [8, 8]
+2019-5-8 13:3:26.26: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2019-5-8 13:3:26.26: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 13:3:26.26: Receptive Field = [17, 17, 17]
+2019-5-8 13:3:26.27: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2019-5-8 13:3:26.27: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 13:3:26.27: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 13:3:26.27: Lower Rank layers will be made of rank = []
+2019-5-8 13:3:26.28: ~~Fully Connected Pathway~~
+2019-5-8 13:3:26.28: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2019-5-8 13:3:26.28: Number of Feature Maps in the additional FC layers = [250, 250]
+2019-5-8 13:3:26.28: Residual connections added at the output of layers (indices from 0) = [1]
+2019-5-8 13:3:26.29: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 13:3:26.29: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2019-5-8 13:3:26.29: ~~Size Of Image Segments~~
+2019-5-8 13:3:26.29: Size of Segments for Training = [37, 37, 37]
+2019-5-8 13:3:26.30: Size of Segments for Validation = [17, 17, 17]
+2019-5-8 13:3:26.30: Size of Segments for Testing = [45, 45, 45]
+2019-5-8 13:3:26.30: ~~Dropout Rates~~
+2019-5-8 13:3:26.31: Drop.R. for each layer in Normal Pathway = []
+2019-5-8 13:3:26.31: Drop.R. for each layer in Subsampled Pathway = []
+2019-5-8 13:3:26.31: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2019-5-8 13:3:26.31: ~~Weight Initialization~~
+2019-5-8 13:3:26.32: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2019-5-8 13:3:26.32: ~~Activation Function~~
+2019-5-8 13:3:26.32: Activation function to use = prelu
+2019-5-8 13:3:26.33: ~~Batch Normalization~~
+2019-5-8 13:3:26.33: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2019-5-8 13:3:26.33: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2019-5-8 13:3:26.33: ========== Done with printing session's parameters ==========
+2019-5-8 13:3:26.34: =============================================================
+2019-5-8 13:3:26.34: CONFIG: The configuration file for the [session] was loaded from: D:\Develope\z\Brain\Core\hippoSegMedic\./config/testConfig.cfg
+2019-5-8 13:3:26.34: 
+2019-5-8 13:3:26.35: ============     NEW TESTING SESSION    ===============
+2019-5-8 13:3:26.35: 
+2019-5-8 13:3:26.35: =============================================================
+2019-5-8 13:3:26.35: =========== PARAMETERS OF THIS TESTING SESSION ==============
+2019-5-8 13:3:26.36: =============================================================
+2019-5-8 13:3:26.36: sessionName = testSessionDm
+2019-5-8 13:3:26.36: Model will be loaded from save = D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 13:3:26.36: ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2019-5-8 13:3:26.37: Number of cases to perform inference on = 1
+2019-5-8 13:3:26.37: Paths to the channels of each case = [['I:\\DATA\\Seg_data\\XW_66_reg\\Clean_MiniMMSE\\NSN_r_TR_MR_02..nii']]
+2019-5-8 13:3:26.37: User provided Ground Truth labels for DSC calculation = False
+2019-5-8 13:3:26.37: >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2019-5-8 13:3:26.38: Paths to the provided GT labels per case = None
+2019-5-8 13:3:26.38: User provided Region-Of-Interest Masks for faster inference = False
+2019-5-8 13:3:26.38: Filepaths of the ROI Masks provided per case = None
+2019-5-8 13:3:26.39: >>> WARN: Inference will be performed on whole scan. Consider providing a ROI image for faster results, if possible!
+2019-5-8 13:3:26.39: Batch size = 20
+2019-5-8 13:3:26.39: ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2019-5-8 13:3:26.39: Path to the main output-folder = D:\Develope\z\Brain\Core\output
+2019-5-8 13:3:26.40: Provided names to use to save results for each case = ['NSN_r_TR_MR_02..nii']
+2019-5-8 13:3:26.40: ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2019-5-8 13:3:26.40: Save the predicted segmentation = True
+2019-5-8 13:3:26.41: Save the probability maps = [False, False, False]
+2019-5-8 13:3:26.41: Paths where to save predictions per case = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/predictions//NSN_r_TR_MR_02..nii']
+2019-5-8 13:3:26.41: Suffixes with which to save segmentations and probability maps = {'segm': 'Segm', 'prob': 'ProbMapClass'}
+2019-5-8 13:3:26.41: ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2019-5-8 13:3:26.42: Save FMs in individual images = False
+2019-5-8 13:3:26.42: Save all requested FMs in one 4D image = False
+2019-5-8 13:3:26.42: Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = None
+2019-5-8 13:3:26.42: Save Feature Maps at = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/features//NSN_r_TR_MR_02..nii']
+2019-5-8 13:3:26.43: ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2019-5-8 13:3:26.43: Pad Input Images = True
+2019-5-8 13:3:26.43: ========== Done with printing session's parameters ==========
+2019-5-8 13:3:26.43: =============================================================
+
+2019-5-8 13:3:26.44: =======================================================
+
+2019-5-8 13:3:26.45: =========== Making the CNN graph... ===============
+2019-5-8 13:3:26.45: ...Building the CNN model...
+2019-5-8 13:3:26.46: [Pathway_NORMAL] is being built...
+2019-5-8 13:3:26.46: 	[Pathway_NORMAL]: Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 13:3:26.46: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 13:3:26.47: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 13:3:26.48: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 13:3:26.49: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+2019-5-8 13:3:26.54: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 13:3:26.54: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+2019-5-8 13:3:26.60: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:26.60: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+2019-5-8 13:3:26.66: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 13:3:26.79: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:26.79: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+2019-5-8 13:3:26.85: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:26.85: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+2019-5-8 13:3:26.91: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 13:3:27.04: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 13:3:27.04: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+2019-5-8 13:3:27.10: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 13:3:27.10: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+2019-5-8 13:3:27.16: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 13:3:27.29: 	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+2019-5-8 13:3:27.30: [Pathway_NORMAL] done.
+2019-5-8 13:3:27.30: [Pathway_SUBSAMPLED[3, 3, 3]] is being built...
+2019-5-8 13:3:27.30: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 13:3:27.30: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 13:3:27.31: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 13:3:27.32: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 13:3:27.33: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 21, 21, 21], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 24, 24, 24]
+2019-5-8 13:3:27.38: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 13:3:27.38: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 22, 22, 22]
+2019-5-8 13:3:27.44: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:27.44: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 17, 17, 17], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 20, 20, 20]
+2019-5-8 13:3:27.49: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 13:3:27.65: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:27.65: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 18, 18, 18]
+2019-5-8 13:3:27.71: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:27.71: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 16, 16, 16]
+2019-5-8 13:3:27.76: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 13:3:27.89: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 13:3:27.90: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 14, 14, 14]
+2019-5-8 13:3:27.95: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 13:3:27.95: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 9, 9, 9], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 12, 12, 12]
+2019-5-8 13:3:28.01: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 13:3:28.14: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Output's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 10, 10, 10]
+2019-5-8 13:3:28.14: [Pathway_SUBSAMPLED[3, 3, 3]] done.
+2019-5-8 13:3:28.31: [Pathway_SUBSAMPLED[5, 5, 5]] is being built...
+2019-5-8 13:3:28.31: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 13:3:28.32: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 13:3:28.32: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 13:3:28.33: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 13:3:28.34: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 20, 20, 20]
+2019-5-8 13:3:28.39: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 13:3:28.40: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 17, 17, 17], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 18, 18, 18]
+2019-5-8 13:3:28.45: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:28.46: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 16, 16, 16]
+2019-5-8 13:3:28.51: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 13:3:28.64: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:28.64: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 14, 14, 14]
+2019-5-8 13:3:28.70: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 13:3:28.70: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 12, 12, 12]
+2019-5-8 13:3:28.75: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 13:3:28.91: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 13:3:28.91: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 9, 9, 9], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 10, 10, 10]
+2019-5-8 13:3:28.97: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 13:3:28.97: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 8, 8, 8]
+2019-5-8 13:3:29.03: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 13:3:29.16: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Output's Shape: (Train) [None, 50, 5, 5, 5], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 6, 6, 6]
+2019-5-8 13:3:29.16: [Pathway_SUBSAMPLED[5, 5, 5]] done.
+2019-5-8 13:3:29.34: DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
+2019-5-8 13:3:29.34: DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
+2019-5-8 13:3:29.38: [Pathway_FC] is being built...
+2019-5-8 13:3:29.39: 	[Pathway_FC]: Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 13:3:29.39: 	[Conv.Layer_0], Filter Shape: [250, 150, 3, 3, 3]
+2019-5-8 13:3:29.39: 	[Conv.Layer_0], Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 13:3:29.50: 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
+2019-5-8 13:3:29.50: 	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 13:3:29.56: 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
+2019-5-8 13:3:29.69: 	[Conv.Layer_2], Filter Shape: [3, 250, 1, 1, 1]
+2019-5-8 13:3:29.70: 	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 13:3:29.76: 	[Pathway_FC]: Output's Shape: (Train) [None, 3, 21, 21, 21], (Val) [None, 3, 1, 1, 1], (Test) [None, 3, 29, 29, 29]
+2019-5-8 13:3:29.76: [Pathway_FC] done.
+2019-5-8 13:3:29.76: Adding the final Softmax Target layer...
+2019-5-8 13:3:29.81: Finished building the CNN's model.
+2019-5-8 13:3:29.81: =========== Compiling the Testing Function ============
+2019-5-8 13:3:29.81: =======================================================
+
+2019-5-8 13:3:29.82: ...Building the function for testing and visualisation of FMs...
+2019-5-8 13:3:29.82: ...Collecting ops and feeds for testing...
+2019-5-8 13:3:29.82: Done.
+2019-5-8 13:3:29.94: =========== Loading parameters from specified saved model ===============
+2019-5-8 13:3:29.95: Loading parameters from:D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 13:3:30.17: Parameters were loaded.
+2019-5-8 13:3:30.18: 
+2019-5-8 13:3:30.18: ======================================================
+2019-5-8 13:3:30.18: =========== Testing with the CNN model ===============
+2019-5-8 13:3:30.19: ======================================================
+
+2019-5-8 13:3:30.19: ###########################################################################################################
+2019-5-8 13:3:30.19: ############################# Starting full Segmentation of Testing subjects ##########################
+2019-5-8 13:3:30.19: ###########################################################################################################
+2019-5-8 13:3:30.19: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2019-5-8 13:3:30.20: ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2019-5-8 13:3:30.20: Loading subject with 1st channel at: I:\DATA\Seg_data\XW_66_reg\Clean_MiniMMSE\NSN_r_TR_MR_02..nii
+2019-5-8 13:3:30.32: Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2019-5-8 13:3:30.32: Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2019-5-8 13:3:30.33: Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2019-5-8 13:3:30.33: Total number of Segments to process:400
+2019-5-8 13:3:30.33: Processed 20/400 segments.
+2019-5-8 13:5:28.14: Processed 80/400 segments.
+2019-5-8 13:8:7.27: Processed 160/400 segments.
+2019-5-8 13:10:46.99: Processed 240/400 segments.
+2019-5-8 13:13:26.71: Processed 320/400 segments.
+2019-5-8 13:16:5.64: Processed 400/400 segments.
+2019-5-8 13:16:45.62: TIMING: Segmentation of subject: [Extracting:] 0.10 [Loading:] 0.15 [ForwardPass:] 794.93 [Total:] 795.18 secs.
+2019-5-8 13:16:45.79: Saving the new label (segmentation) image for the subject #0
+2019-5-8 13:16:45.87: Image saved at: D:\Develope\z\Brain\Core\output\predictions\testSessionDm\predictions\NSN_r_TR_MR_02._Segm.nii.gz
+2019-5-8 13:16:45.87: TIMING: Testing process lasted: 795.68 secs.
+2019-5-8 13:16:45.87: ###########################################################################################################
+2019-5-8 13:16:45.88: ############################# Finished full Segmentation of Testing subjects ##########################
+2019-5-8 13:16:45.88: ###########################################################################################################
+2019-5-8 13:16:45.94: 
+2019-5-8 13:16:45.95: ======================================================
+2019-5-8 13:16:45.95: =========== Testing session finished =================
+2019-5-8 13:16:45.95: ======================================================
+2019-5-8 13:16:45.95: Finished.
+2019-5-8 14:1:39.68: =============================== logger created =======================================
+2019-5-8 14:1:39.68: 
+2019-5-8 14:1:39.68: ======================== Starting new session ============================
+2019-5-8 14:1:39.68: CONFIG: The configuration file for the [model] given is: D:\Develope\z\Brain\Core\hippoSegMedic\./config/modelConfig.cfg
+2019-5-8 14:1:39.69: =============================================================
+2019-5-8 14:1:39.69: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2019-5-8 14:1:39.69: =============================================================
+2019-5-8 14:1:39.69: CNN model's name = deepMedic
+2019-5-8 14:1:39.70: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2019-5-8 14:1:39.70: Number of Classes (including background) = 3
+2019-5-8 14:1:39.70: ~~Normal Pathway~~
+2019-5-8 14:1:39.71: Number of Input Channels = 1
+2019-5-8 14:1:39.71: Number of Layers = 8
+2019-5-8 14:1:39.71: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2019-5-8 14:1:39.71: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:1:39.72: Receptive Field = [17, 17, 17]
+2019-5-8 14:1:39.72: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:1:39.72: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:1:39.72: Lower Rank layers will be made of rank = []
+2019-5-8 14:1:39.73: ~~Subsampled Pathway~~
+2019-5-8 14:1:39.73: Use subsampled Pathway = True
+2019-5-8 14:1:39.73: Number of subsampled pathways that will be built = 2
+2019-5-8 14:1:39.73: Number of Layers (per sub-pathway) = [8, 8]
+2019-5-8 14:1:39.74: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2019-5-8 14:1:39.74: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:1:39.74: Receptive Field = [17, 17, 17]
+2019-5-8 14:1:39.75: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2019-5-8 14:1:39.75: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:1:39.75: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:1:39.75: Lower Rank layers will be made of rank = []
+2019-5-8 14:1:39.76: ~~Fully Connected Pathway~~
+2019-5-8 14:1:39.76: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2019-5-8 14:1:39.76: Number of Feature Maps in the additional FC layers = [250, 250]
+2019-5-8 14:1:39.76: Residual connections added at the output of layers (indices from 0) = [1]
+2019-5-8 14:1:39.77: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:1:39.77: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2019-5-8 14:1:39.77: ~~Size Of Image Segments~~
+2019-5-8 14:1:39.77: Size of Segments for Training = [37, 37, 37]
+2019-5-8 14:1:39.78: Size of Segments for Validation = [17, 17, 17]
+2019-5-8 14:1:39.78: Size of Segments for Testing = [45, 45, 45]
+2019-5-8 14:1:39.78: ~~Dropout Rates~~
+2019-5-8 14:1:39.79: Drop.R. for each layer in Normal Pathway = []
+2019-5-8 14:1:39.79: Drop.R. for each layer in Subsampled Pathway = []
+2019-5-8 14:1:39.79: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2019-5-8 14:1:39.79: ~~Weight Initialization~~
+2019-5-8 14:1:39.80: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2019-5-8 14:1:39.80: ~~Activation Function~~
+2019-5-8 14:1:39.80: Activation function to use = prelu
+2019-5-8 14:1:39.80: ~~Batch Normalization~~
+2019-5-8 14:1:39.81: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2019-5-8 14:1:39.81: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2019-5-8 14:1:39.81: ========== Done with printing session's parameters ==========
+2019-5-8 14:1:39.82: =============================================================
+2019-5-8 14:1:39.82: CONFIG: The configuration file for the [session] was loaded from: D:\Develope\z\Brain\Core\hippoSegMedic\./config/testConfig.cfg
+2019-5-8 14:1:39.82: 
+2019-5-8 14:1:39.82: ============     NEW TESTING SESSION    ===============
+2019-5-8 14:1:39.83: 
+2019-5-8 14:1:39.83: =============================================================
+2019-5-8 14:1:39.83: =========== PARAMETERS OF THIS TESTING SESSION ==============
+2019-5-8 14:1:39.84: =============================================================
+2019-5-8 14:1:39.84: sessionName = testSessionDm
+2019-5-8 14:1:39.84: Model will be loaded from save = D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 14:1:39.84: ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2019-5-8 14:1:39.85: Number of cases to perform inference on = 1
+2019-5-8 14:1:39.85: Paths to the channels of each case = [['I:\\DATA\\Seg_data\\XW_66_reg\\Clean_MiniMMSE\\NSN_r_TR_MR_02..nii']]
+2019-5-8 14:1:39.85: User provided Ground Truth labels for DSC calculation = False
+2019-5-8 14:1:39.86: >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2019-5-8 14:1:39.86: Paths to the provided GT labels per case = None
+2019-5-8 14:1:39.86: User provided Region-Of-Interest Masks for faster inference = False
+2019-5-8 14:1:39.87: Filepaths of the ROI Masks provided per case = None
+2019-5-8 14:1:39.87: >>> WARN: Inference will be performed on whole scan. Consider providing a ROI image for faster results, if possible!
+2019-5-8 14:1:39.87: Batch size = 20
+2019-5-8 14:1:39.88: ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2019-5-8 14:1:39.88: Path to the main output-folder = D:\Develope\z\Brain\Core\output
+2019-5-8 14:1:39.88: Provided names to use to save results for each case = ['NSN_r_TR_MR_02..nii']
+2019-5-8 14:1:39.88: ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2019-5-8 14:1:39.89: Save the predicted segmentation = True
+2019-5-8 14:1:39.89: Save the probability maps = [False, False, False]
+2019-5-8 14:1:39.89: Paths where to save predictions per case = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/predictions//NSN_r_TR_MR_02..nii']
+2019-5-8 14:1:39.90: Suffixes with which to save segmentations and probability maps = {'segm': 'Segm', 'prob': 'ProbMapClass'}
+2019-5-8 14:1:39.90: ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2019-5-8 14:1:39.90: Save FMs in individual images = False
+2019-5-8 14:1:39.91: Save all requested FMs in one 4D image = False
+2019-5-8 14:1:39.91: Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = None
+2019-5-8 14:1:39.91: Save Feature Maps at = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/features//NSN_r_TR_MR_02..nii']
+2019-5-8 14:1:39.91: ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2019-5-8 14:1:39.92: Pad Input Images = True
+2019-5-8 14:1:39.92: ========== Done with printing session's parameters ==========
+2019-5-8 14:1:39.92: =============================================================
+
+2019-5-8 14:1:39.93: =======================================================
+
+2019-5-8 14:1:39.94: =========== Making the CNN graph... ===============
+2019-5-8 14:1:39.94: ...Building the CNN model...
+2019-5-8 14:1:39.94: [Pathway_NORMAL] is being built...
+2019-5-8 14:1:39.95: 	[Pathway_NORMAL]: Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 14:1:39.95: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:1:39.95: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 14:1:39.97: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:1:39.97: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+2019-5-8 14:1:40.03: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:1:40.03: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+2019-5-8 14:1:40.09: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:40.09: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+2019-5-8 14:1:40.15: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:1:40.28: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:40.28: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+2019-5-8 14:1:40.34: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:40.34: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+2019-5-8 14:1:40.40: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:1:40.53: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:1:40.53: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+2019-5-8 14:1:40.59: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:1:40.59: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+2019-5-8 14:1:40.64: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:1:40.78: 	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+2019-5-8 14:1:40.78: [Pathway_NORMAL] done.
+2019-5-8 14:1:40.78: [Pathway_SUBSAMPLED[3, 3, 3]] is being built...
+2019-5-8 14:1:40.78: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 14:1:40.79: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:1:40.79: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 14:1:40.81: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:1:40.81: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 21, 21, 21], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 24, 24, 24]
+2019-5-8 14:1:40.86: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:1:40.87: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 22, 22, 22]
+2019-5-8 14:1:40.92: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:40.92: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 17, 17, 17], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 20, 20, 20]
+2019-5-8 14:1:40.98: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:1:41.13: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:41.14: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 18, 18, 18]
+2019-5-8 14:1:41.19: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:41.19: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 16, 16, 16]
+2019-5-8 14:1:41.25: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:1:41.38: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:1:41.38: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 14, 14, 14]
+2019-5-8 14:1:41.44: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:1:41.44: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 9, 9, 9], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 12, 12, 12]
+2019-5-8 14:1:41.50: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:1:41.64: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Output's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 10, 10, 10]
+2019-5-8 14:1:41.64: [Pathway_SUBSAMPLED[3, 3, 3]] done.
+2019-5-8 14:1:41.81: [Pathway_SUBSAMPLED[5, 5, 5]] is being built...
+2019-5-8 14:1:41.81: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 14:1:41.82: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:1:41.82: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 14:1:41.83: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:1:41.84: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 20, 20, 20]
+2019-5-8 14:1:41.89: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:1:41.90: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 17, 17, 17], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 18, 18, 18]
+2019-5-8 14:1:41.95: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:41.95: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 16, 16, 16]
+2019-5-8 14:1:42.01: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:1:42.14: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:42.14: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 14, 14, 14]
+2019-5-8 14:1:42.20: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:1:42.20: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 12, 12, 12]
+2019-5-8 14:1:42.26: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:1:42.42: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:1:42.42: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 9, 9, 9], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 10, 10, 10]
+2019-5-8 14:1:42.48: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:1:42.48: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 8, 8, 8]
+2019-5-8 14:1:42.54: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:1:42.67: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Output's Shape: (Train) [None, 50, 5, 5, 5], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 6, 6, 6]
+2019-5-8 14:1:42.67: [Pathway_SUBSAMPLED[5, 5, 5]] done.
+2019-5-8 14:1:42.84: DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
+2019-5-8 14:1:42.85: DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
+2019-5-8 14:1:42.89: [Pathway_FC] is being built...
+2019-5-8 14:1:42.89: 	[Pathway_FC]: Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 14:1:42.90: 	[Conv.Layer_0], Filter Shape: [250, 150, 3, 3, 3]
+2019-5-8 14:1:42.90: 	[Conv.Layer_0], Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 14:1:43.01: 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
+2019-5-8 14:1:43.02: 	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 14:1:43.08: 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
+2019-5-8 14:1:43.21: 	[Conv.Layer_2], Filter Shape: [3, 250, 1, 1, 1]
+2019-5-8 14:1:43.21: 	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 14:1:43.27: 	[Pathway_FC]: Output's Shape: (Train) [None, 3, 21, 21, 21], (Val) [None, 3, 1, 1, 1], (Test) [None, 3, 29, 29, 29]
+2019-5-8 14:1:43.27: [Pathway_FC] done.
+2019-5-8 14:1:43.28: Adding the final Softmax Target layer...
+2019-5-8 14:1:43.32: Finished building the CNN's model.
+2019-5-8 14:1:43.33: =========== Compiling the Testing Function ============
+2019-5-8 14:1:43.33: =======================================================
+
+2019-5-8 14:1:43.33: ...Building the function for testing and visualisation of FMs...
+2019-5-8 14:1:43.33: ...Collecting ops and feeds for testing...
+2019-5-8 14:1:43.34: Done.
+2019-5-8 14:1:43.46: =========== Loading parameters from specified saved model ===============
+2019-5-8 14:1:43.47: Loading parameters from:D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 14:1:43.70: Parameters were loaded.
+2019-5-8 14:1:43.70: 
+2019-5-8 14:1:43.70: ======================================================
+2019-5-8 14:1:43.70: =========== Testing with the CNN model ===============
+2019-5-8 14:1:43.71: ======================================================
+
+2019-5-8 14:1:43.71: ###########################################################################################################
+2019-5-8 14:1:43.71: ############################# Starting full Segmentation of Testing subjects ##########################
+2019-5-8 14:1:43.71: ###########################################################################################################
+2019-5-8 14:1:43.72: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2019-5-8 14:1:43.72: ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2019-5-8 14:1:43.72: Loading subject with 1st channel at: I:\DATA\Seg_data\XW_66_reg\Clean_MiniMMSE\NSN_r_TR_MR_02..nii
+2019-5-8 14:1:43.84: Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2019-5-8 14:1:43.85: Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2019-5-8 14:1:43.85: Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2019-5-8 14:1:43.85: Total number of Segments to process:400
+2019-5-8 14:1:43.85: Processed 20/400 segments.
+2019-5-8 14:3:44.12: Processed 80/400 segments.
+2019-5-8 14:6:28.13: Processed 160/400 segments.
+2019-5-8 14:9:8.80: Processed 240/400 segments.
+2019-5-8 14:11:51.41: Processed 320/400 segments.
+2019-5-8 14:14:33.91: Processed 400/400 segments.
+2019-5-8 14:15:15.86: TIMING: Segmentation of subject: [Extracting:] 0.10 [Loading:] 0.14 [ForwardPass:] 811.66 [Total:] 811.90 secs.
+2019-5-8 14:15:16.04: Saving the new label (segmentation) image for the subject #0
+2019-5-8 14:15:16.12: Image saved at: D:\Develope\z\Brain\Core\output\predictions\testSessionDm\predictions\NSN_r_TR_MR_02._Segm.nii.gz
+2019-5-8 14:15:16.12: TIMING: Testing process lasted: 812.41 secs.
+2019-5-8 14:15:16.13: ###########################################################################################################
+2019-5-8 14:15:16.13: ############################# Finished full Segmentation of Testing subjects ##########################
+2019-5-8 14:15:16.14: ###########################################################################################################
+2019-5-8 14:15:16.20: 
+2019-5-8 14:15:16.20: ======================================================
+2019-5-8 14:15:16.20: =========== Testing session finished =================
+2019-5-8 14:15:16.21: ======================================================
+2019-5-8 14:15:16.21: Finished.
+2019-5-8 14:15:46.19: =============================== logger created =======================================
+2019-5-8 14:15:46.20: 
+2019-5-8 14:15:46.20: ======================== Starting new session ============================
+2019-5-8 14:15:46.20: CONFIG: The configuration file for the [model] given is: D:\Develope\z\Brain\Core\hippoSegMedic\./config/modelConfig.cfg
+2019-5-8 14:15:46.21: =============================================================
+2019-5-8 14:15:46.21: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2019-5-8 14:15:46.21: =============================================================
+2019-5-8 14:15:46.21: CNN model's name = deepMedic
+2019-5-8 14:15:46.22: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2019-5-8 14:15:46.22: Number of Classes (including background) = 3
+2019-5-8 14:15:46.22: ~~Normal Pathway~~
+2019-5-8 14:15:46.22: Number of Input Channels = 1
+2019-5-8 14:15:46.23: Number of Layers = 8
+2019-5-8 14:15:46.23: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2019-5-8 14:15:46.23: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:15:46.23: Receptive Field = [17, 17, 17]
+2019-5-8 14:15:46.24: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:15:46.24: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:15:46.24: Lower Rank layers will be made of rank = []
+2019-5-8 14:15:46.24: ~~Subsampled Pathway~~
+2019-5-8 14:15:46.25: Use subsampled Pathway = True
+2019-5-8 14:15:46.25: Number of subsampled pathways that will be built = 2
+2019-5-8 14:15:46.25: Number of Layers (per sub-pathway) = [8, 8]
+2019-5-8 14:15:46.26: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2019-5-8 14:15:46.26: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:15:46.26: Receptive Field = [17, 17, 17]
+2019-5-8 14:15:46.26: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2019-5-8 14:15:46.27: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:15:46.27: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:15:46.27: Lower Rank layers will be made of rank = []
+2019-5-8 14:15:46.27: ~~Fully Connected Pathway~~
+2019-5-8 14:15:46.28: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2019-5-8 14:15:46.28: Number of Feature Maps in the additional FC layers = [250, 250]
+2019-5-8 14:15:46.28: Residual connections added at the output of layers (indices from 0) = [1]
+2019-5-8 14:15:46.28: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:15:46.29: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2019-5-8 14:15:46.29: ~~Size Of Image Segments~~
+2019-5-8 14:15:46.29: Size of Segments for Training = [37, 37, 37]
+2019-5-8 14:15:46.29: Size of Segments for Validation = [17, 17, 17]
+2019-5-8 14:15:46.30: Size of Segments for Testing = [45, 45, 45]
+2019-5-8 14:15:46.30: ~~Dropout Rates~~
+2019-5-8 14:15:46.30: Drop.R. for each layer in Normal Pathway = []
+2019-5-8 14:15:46.30: Drop.R. for each layer in Subsampled Pathway = []
+2019-5-8 14:15:46.31: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2019-5-8 14:15:46.31: ~~Weight Initialization~~
+2019-5-8 14:15:46.31: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2019-5-8 14:15:46.32: ~~Activation Function~~
+2019-5-8 14:15:46.32: Activation function to use = prelu
+2019-5-8 14:15:46.32: ~~Batch Normalization~~
+2019-5-8 14:15:46.33: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2019-5-8 14:15:46.33: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2019-5-8 14:15:46.33: ========== Done with printing session's parameters ==========
+2019-5-8 14:15:46.34: =============================================================
+2019-5-8 14:15:46.34: CONFIG: The configuration file for the [session] was loaded from: D:\Develope\z\Brain\Core\hippoSegMedic\./config/testConfig.cfg
+2019-5-8 14:15:46.34: 
+2019-5-8 14:15:46.34: ERROR: Caught exception from main process: [Errno 2] No such file or directory: 'D:\\Develope\\z\\Brain\\Core\\hippoSegMedic\\config\\Masks.cfg'
+2019-5-8 14:15:46.35: Traceback (most recent call last):
+  File "Core/hippoSegMedic/deepMedicRun.py", line 78, in <module>
+    _ = session.compile_session_params_from_cfg(model_params)
+  File "D:\Develope\z\Brain\Core\hippoSegMedic\deepmedic\frontEnd\testSession.py", line 50, in compile_session_params_from_cfg
+    cfg = self._cfg )
+  File "D:\Develope\z\Brain\Core\hippoSegMedic\deepmedic\frontEnd\configParsing\testSessionParams.py", line 44, in __init__
+    self.roiMasksFilepaths = parseAbsFileLinesInList( getAbsPathEvenIfRelativeIsGiven(cfg[cfg.ROI_MASKS], abs_path_to_cfg) ) if self.providedRoiMasks else None
+  File "D:\Develope\z\Brain\Core\hippoSegMedic\deepmedic\frontEnd\configParsing\utils.py", line 43, in parseAbsFileLinesInList
+    with open(pathToListingFile, "r") as inp :
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Develope\\z\\Brain\\Core\\hippoSegMedic\\config\\Masks.cfg'
+
+2019-5-8 14:15:46.35: Finished.
+2019-5-8 14:16:8.51: =============================== logger created =======================================
+2019-5-8 14:16:8.51: 
+2019-5-8 14:16:8.51: ======================== Starting new session ============================
+2019-5-8 14:16:8.51: CONFIG: The configuration file for the [model] given is: D:\Develope\z\Brain\Core\hippoSegMedic\./config/modelConfig.cfg
+2019-5-8 14:16:8.52: =============================================================
+2019-5-8 14:16:8.52: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2019-5-8 14:16:8.52: =============================================================
+2019-5-8 14:16:8.52: CNN model's name = deepMedic
+2019-5-8 14:16:8.53: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2019-5-8 14:16:8.53: Number of Classes (including background) = 3
+2019-5-8 14:16:8.53: ~~Normal Pathway~~
+2019-5-8 14:16:8.54: Number of Input Channels = 1
+2019-5-8 14:16:8.54: Number of Layers = 8
+2019-5-8 14:16:8.54: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2019-5-8 14:16:8.54: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:16:8.55: Receptive Field = [17, 17, 17]
+2019-5-8 14:16:8.55: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:16:8.55: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:16:8.55: Lower Rank layers will be made of rank = []
+2019-5-8 14:16:8.56: ~~Subsampled Pathway~~
+2019-5-8 14:16:8.56: Use subsampled Pathway = True
+2019-5-8 14:16:8.56: Number of subsampled pathways that will be built = 2
+2019-5-8 14:16:8.56: Number of Layers (per sub-pathway) = [8, 8]
+2019-5-8 14:16:8.57: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2019-5-8 14:16:8.57: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:16:8.57: Receptive Field = [17, 17, 17]
+2019-5-8 14:16:8.58: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2019-5-8 14:16:8.58: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:16:8.58: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:16:8.58: Lower Rank layers will be made of rank = []
+2019-5-8 14:16:8.59: ~~Fully Connected Pathway~~
+2019-5-8 14:16:8.59: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2019-5-8 14:16:8.59: Number of Feature Maps in the additional FC layers = [250, 250]
+2019-5-8 14:16:8.60: Residual connections added at the output of layers (indices from 0) = [1]
+2019-5-8 14:16:8.60: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:16:8.60: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2019-5-8 14:16:8.60: ~~Size Of Image Segments~~
+2019-5-8 14:16:8.61: Size of Segments for Training = [37, 37, 37]
+2019-5-8 14:16:8.61: Size of Segments for Validation = [17, 17, 17]
+2019-5-8 14:16:8.61: Size of Segments for Testing = [45, 45, 45]
+2019-5-8 14:16:8.61: ~~Dropout Rates~~
+2019-5-8 14:16:8.62: Drop.R. for each layer in Normal Pathway = []
+2019-5-8 14:16:8.62: Drop.R. for each layer in Subsampled Pathway = []
+2019-5-8 14:16:8.62: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2019-5-8 14:16:8.63: ~~Weight Initialization~~
+2019-5-8 14:16:8.63: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2019-5-8 14:16:8.64: ~~Activation Function~~
+2019-5-8 14:16:8.64: Activation function to use = prelu
+2019-5-8 14:16:8.64: ~~Batch Normalization~~
+2019-5-8 14:16:8.64: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2019-5-8 14:16:8.65: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2019-5-8 14:16:8.65: ========== Done with printing session's parameters ==========
+2019-5-8 14:16:8.65: =============================================================
+2019-5-8 14:16:8.65: CONFIG: The configuration file for the [session] was loaded from: D:\Develope\z\Brain\Core\hippoSegMedic\./config/testConfig.cfg
+2019-5-8 14:16:8.66: 
+2019-5-8 14:16:8.66: ============     NEW TESTING SESSION    ===============
+2019-5-8 14:16:8.67: 
+2019-5-8 14:16:8.67: =============================================================
+2019-5-8 14:16:8.67: =========== PARAMETERS OF THIS TESTING SESSION ==============
+2019-5-8 14:16:8.67: =============================================================
+2019-5-8 14:16:8.68: sessionName = testSessionDm
+2019-5-8 14:16:8.68: Model will be loaded from save = D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 14:16:8.68: ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2019-5-8 14:16:8.68: Number of cases to perform inference on = 1
+2019-5-8 14:16:8.72: Paths to the channels of each case = [['I:\\DATA\\Seg_data\\XW_66_reg\\Clean_MiniMMSE\\NSN_r_TR_MR_02..nii']]
+2019-5-8 14:16:8.73: User provided Ground Truth labels for DSC calculation = False
+2019-5-8 14:16:8.74: >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2019-5-8 14:16:8.75: Paths to the provided GT labels per case = None
+2019-5-8 14:16:8.75: User provided Region-Of-Interest Masks for faster inference = True
+2019-5-8 14:16:8.75: Filepaths of the ROI Masks provided per case = ['D:\\Develope\\z\\Brain\\Core\\hippoSegMedic\\config\\mask.nii']
+2019-5-8 14:16:8.75: Batch size = 20
+2019-5-8 14:16:8.76: ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2019-5-8 14:16:8.76: Path to the main output-folder = D:\Develope\z\Brain\Core\output
+2019-5-8 14:16:8.76: Provided names to use to save results for each case = ['NSN_r_TR_MR_02..nii']
+2019-5-8 14:16:8.77: ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2019-5-8 14:16:8.77: Save the predicted segmentation = True
+2019-5-8 14:16:8.77: Save the probability maps = [False, False, False]
+2019-5-8 14:16:8.77: Paths where to save predictions per case = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/predictions//NSN_r_TR_MR_02..nii']
+2019-5-8 14:16:8.78: Suffixes with which to save segmentations and probability maps = {'segm': 'Segm', 'prob': 'ProbMapClass'}
+2019-5-8 14:16:8.78: ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2019-5-8 14:16:8.78: Save FMs in individual images = False
+2019-5-8 14:16:8.78: Save all requested FMs in one 4D image = False
+2019-5-8 14:16:8.79: Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = None
+2019-5-8 14:16:8.79: Save Feature Maps at = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/features//NSN_r_TR_MR_02..nii']
+2019-5-8 14:16:8.79: ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2019-5-8 14:16:8.80: Pad Input Images = True
+2019-5-8 14:16:8.80: ========== Done with printing session's parameters ==========
+2019-5-8 14:16:8.80: =============================================================
+
+2019-5-8 14:16:8.80: =======================================================
+
+2019-5-8 14:16:8.81: =========== Making the CNN graph... ===============
+2019-5-8 14:16:8.82: ...Building the CNN model...
+2019-5-8 14:16:8.82: [Pathway_NORMAL] is being built...
+2019-5-8 14:16:8.83: 	[Pathway_NORMAL]: Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 14:16:8.83: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:16:8.83: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 14:16:8.85: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:16:8.85: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+2019-5-8 14:16:8.90: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:16:8.91: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+2019-5-8 14:16:8.96: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:8.96: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+2019-5-8 14:16:9.02: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:16:9.15: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:9.15: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+2019-5-8 14:16:9.21: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:9.21: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+2019-5-8 14:16:9.26: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:16:9.39: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:16:9.40: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+2019-5-8 14:16:9.45: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:16:9.45: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+2019-5-8 14:16:9.51: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:16:9.64: 	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+2019-5-8 14:16:9.64: [Pathway_NORMAL] done.
+2019-5-8 14:16:9.65: [Pathway_SUBSAMPLED[3, 3, 3]] is being built...
+2019-5-8 14:16:9.65: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 14:16:9.65: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:16:9.66: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 14:16:9.67: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:16:9.68: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 21, 21, 21], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 24, 24, 24]
+2019-5-8 14:16:9.73: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:16:9.73: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 22, 22, 22]
+2019-5-8 14:16:9.79: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:9.79: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 17, 17, 17], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 20, 20, 20]
+2019-5-8 14:16:9.84: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:16:10.00: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:10.00: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 18, 18, 18]
+2019-5-8 14:16:10.05: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:10.06: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 16, 16, 16]
+2019-5-8 14:16:10.11: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:16:10.24: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:16:10.24: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 14, 14, 14]
+2019-5-8 14:16:10.30: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:16:10.30: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 9, 9, 9], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 12, 12, 12]
+2019-5-8 14:16:10.35: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:16:10.49: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Output's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 10, 10, 10]
+2019-5-8 14:16:10.49: [Pathway_SUBSAMPLED[3, 3, 3]] done.
+2019-5-8 14:16:10.66: [Pathway_SUBSAMPLED[5, 5, 5]] is being built...
+2019-5-8 14:16:10.67: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 14:16:10.67: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:16:10.67: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 14:16:10.69: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:16:10.69: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 20, 20, 20]
+2019-5-8 14:16:10.74: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:16:10.75: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 17, 17, 17], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 18, 18, 18]
+2019-5-8 14:16:10.80: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:10.80: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 16, 16, 16]
+2019-5-8 14:16:10.86: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:16:11.00: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:11.00: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 14, 14, 14]
+2019-5-8 14:16:11.05: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:16:11.06: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 12, 12, 12]
+2019-5-8 14:16:11.11: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:16:11.27: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:16:11.27: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 9, 9, 9], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 10, 10, 10]
+2019-5-8 14:16:11.33: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:16:11.33: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 8, 8, 8]
+2019-5-8 14:16:11.39: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:16:11.51: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Output's Shape: (Train) [None, 50, 5, 5, 5], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 6, 6, 6]
+2019-5-8 14:16:11.52: [Pathway_SUBSAMPLED[5, 5, 5]] done.
+2019-5-8 14:16:11.69: DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
+2019-5-8 14:16:11.69: DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
+2019-5-8 14:16:11.73: [Pathway_FC] is being built...
+2019-5-8 14:16:11.74: 	[Pathway_FC]: Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 14:16:11.74: 	[Conv.Layer_0], Filter Shape: [250, 150, 3, 3, 3]
+2019-5-8 14:16:11.74: 	[Conv.Layer_0], Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 14:16:11.85: 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
+2019-5-8 14:16:11.85: 	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 14:16:11.91: 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
+2019-5-8 14:16:12.05: 	[Conv.Layer_2], Filter Shape: [3, 250, 1, 1, 1]
+2019-5-8 14:16:12.05: 	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 14:16:12.11: 	[Pathway_FC]: Output's Shape: (Train) [None, 3, 21, 21, 21], (Val) [None, 3, 1, 1, 1], (Test) [None, 3, 29, 29, 29]
+2019-5-8 14:16:12.11: [Pathway_FC] done.
+2019-5-8 14:16:12.11: Adding the final Softmax Target layer...
+2019-5-8 14:16:12.16: Finished building the CNN's model.
+2019-5-8 14:16:12.16: =========== Compiling the Testing Function ============
+2019-5-8 14:16:12.16: =======================================================
+
+2019-5-8 14:16:12.17: ...Building the function for testing and visualisation of FMs...
+2019-5-8 14:16:12.17: ...Collecting ops and feeds for testing...
+2019-5-8 14:16:12.17: Done.
+2019-5-8 14:16:12.29: =========== Loading parameters from specified saved model ===============
+2019-5-8 14:16:12.29: Loading parameters from:D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 14:16:12.53: Parameters were loaded.
+2019-5-8 14:16:12.53: 
+2019-5-8 14:16:12.53: ======================================================
+2019-5-8 14:16:12.54: =========== Testing with the CNN model ===============
+2019-5-8 14:16:12.54: ======================================================
+
+2019-5-8 14:16:12.54: ###########################################################################################################
+2019-5-8 14:16:12.54: ############################# Starting full Segmentation of Testing subjects ##########################
+2019-5-8 14:16:12.55: ###########################################################################################################
+2019-5-8 14:16:12.55: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2019-5-8 14:16:12.55: ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2019-5-8 14:16:12.55: Loading subject with 1st channel at: I:\DATA\Seg_data\XW_66_reg\Clean_MiniMMSE\NSN_r_TR_MR_02..nii
+2019-5-8 14:16:12.74: Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2019-5-8 14:16:12.77: Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2019-5-8 14:16:12.77: Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2019-5-8 14:16:12.77: Total number of Segments to process:380
+2019-5-8 14:16:12.77: Processed 20/380 segments.
+2019-5-8 14:17:32.93: Processed 60/380 segments.
+2019-5-8 14:19:37.06: Processed 120/380 segments.
+2019-5-8 14:21:39.34: Processed 180/380 segments.
+2019-5-8 14:23:38.82: Processed 240/380 segments.
+2019-5-8 14:25:41.34: Processed 300/380 segments.
+2019-5-8 14:27:45.85: Processed 360/380 segments.
+2019-5-8 14:28:27.09: Processed 380/380 segments.
+2019-5-8 14:29:7.16: TIMING: Segmentation of subject: [Extracting:] 0.10 [Loading:] 0.14 [ForwardPass:] 774.04 [Total:] 774.27 secs.
+2019-5-8 14:29:7.33: Saving the new label (segmentation) image for the subject #0
+2019-5-8 14:29:7.41: Image saved at: D:\Develope\z\Brain\Core\output\predictions\testSessionDm\predictions\NSN_r_TR_MR_02._Segm.nii.gz
+2019-5-8 14:29:7.41: TIMING: Testing process lasted: 774.86 secs.
+2019-5-8 14:29:7.41: ###########################################################################################################
+2019-5-8 14:29:7.42: ############################# Finished full Segmentation of Testing subjects ##########################
+2019-5-8 14:29:7.42: ###########################################################################################################
+2019-5-8 14:29:7.47: 
+2019-5-8 14:29:7.48: ======================================================
+2019-5-8 14:29:7.48: =========== Testing session finished =================
+2019-5-8 14:29:7.48: ======================================================
+2019-5-8 14:29:7.49: Finished.
+2019-5-8 14:55:25.64: =============================== logger created =======================================
+2019-5-8 14:55:25.64: 
+2019-5-8 14:55:25.65: ======================== Starting new session ============================
+2019-5-8 14:55:25.65: CONFIG: The configuration file for the [model] given is: D:\Develope\z\Brain\Core\hippoSegMedic\./config/modelConfig.cfg
+2019-5-8 14:55:25.65: =============================================================
+2019-5-8 14:55:25.65: ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2019-5-8 14:55:25.66: =============================================================
+2019-5-8 14:55:25.66: CNN model's name = deepMedic
+2019-5-8 14:55:25.66: ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2019-5-8 14:55:25.66: Number of Classes (including background) = 3
+2019-5-8 14:55:25.67: ~~Normal Pathway~~
+2019-5-8 14:55:25.67: Number of Input Channels = 1
+2019-5-8 14:55:25.67: Number of Layers = 8
+2019-5-8 14:55:25.67: Number of Feature Maps per layer = [30, 30, 40, 40, 40, 40, 50, 50]
+2019-5-8 14:55:25.68: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:55:25.68: Receptive Field = [17, 17, 17]
+2019-5-8 14:55:25.68: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:55:25.68: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:55:25.69: Lower Rank layers will be made of rank = []
+2019-5-8 14:55:25.69: ~~Subsampled Pathway~~
+2019-5-8 14:55:25.69: Use subsampled Pathway = True
+2019-5-8 14:55:25.69: Number of subsampled pathways that will be built = 2
+2019-5-8 14:55:25.70: Number of Layers (per sub-pathway) = [8, 8]
+2019-5-8 14:55:25.70: Number of Feature Maps per layer (per sub-pathway) = [[30, 30, 40, 40, 40, 40, 50, 50], [30, 30, 40, 40, 40, 40, 50, 50]]
+2019-5-8 14:55:25.70: Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2019-5-8 14:55:25.70: Receptive Field = [17, 17, 17]
+2019-5-8 14:55:25.71: Subsampling Factor per dimension (per sub-pathway) = [[3, 3, 3], [5, 5, 5]]
+2019-5-8 14:55:25.71: Residual connections added at the output of layers (indices from 0) = [3, 5, 7]
+2019-5-8 14:55:25.71: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:55:25.72: Lower Rank layers will be made of rank = []
+2019-5-8 14:55:25.72: ~~Fully Connected Pathway~~
+2019-5-8 14:55:25.72: Number of additional FC layers (Excluding the Classif. Layer) = 2
+2019-5-8 14:55:25.72: Number of Feature Maps in the additional FC layers = [250, 250]
+2019-5-8 14:55:25.73: Residual connections added at the output of layers (indices from 0) = [1]
+2019-5-8 14:55:25.73: Layers that will be made of Lower Rank (indices from 0) = []
+2019-5-8 14:55:25.73: Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [3, 3, 3]
+2019-5-8 14:55:25.73: ~~Size Of Image Segments~~
+2019-5-8 14:55:25.74: Size of Segments for Training = [37, 37, 37]
+2019-5-8 14:55:25.74: Size of Segments for Validation = [17, 17, 17]
+2019-5-8 14:55:25.74: Size of Segments for Testing = [45, 45, 45]
+2019-5-8 14:55:25.74: ~~Dropout Rates~~
+2019-5-8 14:55:25.75: Drop.R. for each layer in Normal Pathway = []
+2019-5-8 14:55:25.75: Drop.R. for each layer in Subsampled Pathway = []
+2019-5-8 14:55:25.75: Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.0, 0.5, 0.5]
+2019-5-8 14:55:25.75: ~~Weight Initialization~~
+2019-5-8 14:55:25.76: Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2019-5-8 14:55:25.76: ~~Activation Function~~
+2019-5-8 14:55:25.76: Activation function to use = prelu
+2019-5-8 14:55:25.77: ~~Batch Normalization~~
+2019-5-8 14:55:25.77: Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2019-5-8 14:55:25.77: Batch Normalization uses a rolling average for inference, over this many batches = 60
+2019-5-8 14:55:25.77: ========== Done with printing session's parameters ==========
+2019-5-8 14:55:25.78: =============================================================
+2019-5-8 14:55:25.78: CONFIG: The configuration file for the [session] was loaded from: D:\Develope\z\Brain\Core\hippoSegMedic\./config/testConfig.cfg
+2019-5-8 14:55:25.78: 
+2019-5-8 14:55:25.79: ============     NEW TESTING SESSION    ===============
+2019-5-8 14:55:25.79: 
+2019-5-8 14:55:25.79: =============================================================
+2019-5-8 14:55:25.79: =========== PARAMETERS OF THIS TESTING SESSION ==============
+2019-5-8 14:55:25.80: =============================================================
+2019-5-8 14:55:25.80: sessionName = testSessionDm
+2019-5-8 14:55:25.80: Model will be loaded from save = D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 14:55:25.80: ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2019-5-8 14:55:25.81: Number of cases to perform inference on = 1
+2019-5-8 14:55:25.81: Paths to the channels of each case = [['I:\\DATA\\Seg_data\\XW_66_reg\\Clean_MiniMMSE\\NSN_r_TR_MR_02..nii']]
+2019-5-8 14:55:25.81: User provided Ground Truth labels for DSC calculation = False
+2019-5-8 14:55:25.82: >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2019-5-8 14:55:25.82: Paths to the provided GT labels per case = None
+2019-5-8 14:55:25.82: User provided Region-Of-Interest Masks for faster inference = True
+2019-5-8 14:55:25.82: Filepaths of the ROI Masks provided per case = ['D:\\Develope\\z\\Brain\\Core\\hippoSegMedic\\config\\mask.nii']
+2019-5-8 14:55:25.83: Batch size = 20
+2019-5-8 14:55:25.83: ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2019-5-8 14:55:25.83: Path to the main output-folder = D:\Develope\z\Brain\Core\output
+2019-5-8 14:55:25.83: Provided names to use to save results for each case = ['NSN_r_TR_MR_02..nii']
+2019-5-8 14:55:25.84: ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2019-5-8 14:55:25.84: Save the predicted segmentation = True
+2019-5-8 14:55:25.84: Save the probability maps = [False, False, False]
+2019-5-8 14:55:25.85: Paths where to save predictions per case = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/predictions//NSN_r_TR_MR_02..nii']
+2019-5-8 14:55:25.85: Suffixes with which to save segmentations and probability maps = {'segm': 'Segm', 'prob': 'ProbMapClass'}
+2019-5-8 14:55:25.85: ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2019-5-8 14:55:25.85: Save FMs in individual images = False
+2019-5-8 14:55:25.86: Save all requested FMs in one 4D image = False
+2019-5-8 14:55:25.86: Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = None
+2019-5-8 14:55:25.86: Save Feature Maps at = ['D:\\Develope\\z\\Brain\\Core\\output/predictions/testSessionDm/features//NSN_r_TR_MR_02..nii']
+2019-5-8 14:55:25.86: ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2019-5-8 14:55:25.87: Pad Input Images = True
+2019-5-8 14:55:25.87: ========== Done with printing session's parameters ==========
+2019-5-8 14:55:25.87: =============================================================
+
+2019-5-8 14:55:25.88: =======================================================
+
+2019-5-8 14:55:25.89: =========== Making the CNN graph... ===============
+2019-5-8 14:55:25.89: ...Building the CNN model...
+2019-5-8 14:55:25.90: [Pathway_NORMAL] is being built...
+2019-5-8 14:55:25.90: 	[Pathway_NORMAL]: Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 14:55:25.90: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:55:25.91: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 37, 37, 37], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 45, 45, 45]
+2019-5-8 14:55:25.92: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:55:25.93: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 35, 35, 35], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 43, 43, 43]
+2019-5-8 14:55:25.98: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:55:25.98: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 33, 33, 33], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 41, 41, 41]
+2019-5-8 14:55:26.04: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:26.04: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 31, 31, 31], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 39, 39, 39]
+2019-5-8 14:55:26.10: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:55:26.23: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:26.23: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 29, 29, 29], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 37, 37, 37]
+2019-5-8 14:55:26.29: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:26.29: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 27, 27, 27], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 35, 35, 35]
+2019-5-8 14:55:26.34: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:55:26.47: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:55:26.48: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 25, 25, 25], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 33, 33, 33]
+2019-5-8 14:55:26.53: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:55:26.53: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 23, 23, 23], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 31, 31, 31]
+2019-5-8 14:55:26.59: 	[Pathway_NORMAL]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:55:26.72: 	[Pathway_NORMAL]: Output's Shape: (Train) [None, 50, 21, 21, 21], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 29, 29, 29]
+2019-5-8 14:55:26.73: [Pathway_NORMAL] done.
+2019-5-8 14:55:26.73: [Pathway_SUBSAMPLED[3, 3, 3]] is being built...
+2019-5-8 14:55:26.73: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 14:55:26.73: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:55:26.74: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 23, 23, 23], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 26, 26, 26]
+2019-5-8 14:55:26.75: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:55:26.75: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 21, 21, 21], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 24, 24, 24]
+2019-5-8 14:55:26.81: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:55:26.81: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 22, 22, 22]
+2019-5-8 14:55:26.87: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:26.87: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 17, 17, 17], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 20, 20, 20]
+2019-5-8 14:55:26.92: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:55:27.07: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:27.08: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 18, 18, 18]
+2019-5-8 14:55:27.13: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:27.14: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 16, 16, 16]
+2019-5-8 14:55:27.19: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:55:27.33: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:55:27.33: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 14, 14, 14]
+2019-5-8 14:55:27.39: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:55:27.39: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 9, 9, 9], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 12, 12, 12]
+2019-5-8 14:55:27.45: 	[Pathway_SUBSAMPLED[3, 3, 3]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:55:27.58: 	[Pathway_SUBSAMPLED[3, 3, 3]]: Output's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 10, 10, 10]
+2019-5-8 14:55:27.58: [Pathway_SUBSAMPLED[3, 3, 3]] done.
+2019-5-8 14:55:27.75: [Pathway_SUBSAMPLED[5, 5, 5]] is being built...
+2019-5-8 14:55:27.76: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 14:55:27.76: 	[Conv.Layer_0], Filter Shape: [30, 1, 3, 3, 3]
+2019-5-8 14:55:27.76: 	[Conv.Layer_0], Input's Shape: (Train) [None, 1, 21, 21, 21], (Val) [None, 1, 17, 17, 17], (Test) [None, 1, 22, 22, 22]
+2019-5-8 14:55:27.78: 	[Conv.Layer_1], Filter Shape: [30, 30, 3, 3, 3]
+2019-5-8 14:55:27.78: 	[Conv.Layer_1], Input's Shape: (Train) [None, 30, 19, 19, 19], (Val) [None, 30, 15, 15, 15], (Test) [None, 30, 20, 20, 20]
+2019-5-8 14:55:27.83: 	[Conv.Layer_2], Filter Shape: [40, 30, 3, 3, 3]
+2019-5-8 14:55:27.83: 	[Conv.Layer_2], Input's Shape: (Train) [None, 30, 17, 17, 17], (Val) [None, 30, 13, 13, 13], (Test) [None, 30, 18, 18, 18]
+2019-5-8 14:55:27.89: 	[Conv.Layer_3], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:27.89: 	[Conv.Layer_3], Input's Shape: (Train) [None, 40, 15, 15, 15], (Val) [None, 40, 11, 11, 11], (Test) [None, 40, 16, 16, 16]
+2019-5-8 14:55:27.95: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_3] to input of previous layer.
+2019-5-8 14:55:28.08: 	[Conv.Layer_4], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:28.08: 	[Conv.Layer_4], Input's Shape: (Train) [None, 40, 13, 13, 13], (Val) [None, 40, 9, 9, 9], (Test) [None, 40, 14, 14, 14]
+2019-5-8 14:55:28.14: 	[Conv.Layer_5], Filter Shape: [40, 40, 3, 3, 3]
+2019-5-8 14:55:28.14: 	[Conv.Layer_5], Input's Shape: (Train) [None, 40, 11, 11, 11], (Val) [None, 40, 7, 7, 7], (Test) [None, 40, 12, 12, 12]
+2019-5-8 14:55:28.20: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_5] to input of previous layer.
+2019-5-8 14:55:28.36: 	[Conv.Layer_6], Filter Shape: [50, 40, 3, 3, 3]
+2019-5-8 14:55:28.36: 	[Conv.Layer_6], Input's Shape: (Train) [None, 40, 9, 9, 9], (Val) [None, 40, 5, 5, 5], (Test) [None, 40, 10, 10, 10]
+2019-5-8 14:55:28.42: 	[Conv.Layer_7], Filter Shape: [50, 50, 3, 3, 3]
+2019-5-8 14:55:28.42: 	[Conv.Layer_7], Input's Shape: (Train) [None, 50, 7, 7, 7], (Val) [None, 50, 3, 3, 3], (Test) [None, 50, 8, 8, 8]
+2019-5-8 14:55:28.48: 	[Pathway_SUBSAMPLED[5, 5, 5]]: making Residual Connection between output of [Layer_7] to input of previous layer.
+2019-5-8 14:55:28.61: 	[Pathway_SUBSAMPLED[5, 5, 5]]: Output's Shape: (Train) [None, 50, 5, 5, 5], (Val) [None, 50, 1, 1, 1], (Test) [None, 50, 6, 6, 6]
+2019-5-8 14:55:28.61: [Pathway_SUBSAMPLED[5, 5, 5]] done.
+2019-5-8 14:55:28.80: DEBUG: Shape of the kernel of the first FC layer is : [3, 3, 3]
+2019-5-8 14:55:28.80: DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [2, 2, 2]
+2019-5-8 14:55:28.84: [Pathway_FC] is being built...
+2019-5-8 14:55:28.85: 	[Pathway_FC]: Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 14:55:28.85: 	[Conv.Layer_0], Filter Shape: [250, 150, 3, 3, 3]
+2019-5-8 14:55:28.85: 	[Conv.Layer_0], Input's Shape: (Train) [None, 150, 23, 23, 23], (Val) [None, 150, 3, 3, 3], (Test) [None, 150, 31, 31, 31]
+2019-5-8 14:55:28.96: 	[Conv.Layer_1], Filter Shape: [250, 250, 1, 1, 1]
+2019-5-8 14:55:28.97: 	[Conv.Layer_1], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 14:55:29.03: 	[Pathway_FC]: making Residual Connection between output of [Layer_1] to input of previous layer.
+2019-5-8 14:55:29.16: 	[Conv.Layer_2], Filter Shape: [3, 250, 1, 1, 1]
+2019-5-8 14:55:29.16: 	[Conv.Layer_2], Input's Shape: (Train) [None, 250, 21, 21, 21], (Val) [None, 250, 1, 1, 1], (Test) [None, 250, 29, 29, 29]
+2019-5-8 14:55:29.22: 	[Pathway_FC]: Output's Shape: (Train) [None, 3, 21, 21, 21], (Val) [None, 3, 1, 1, 1], (Test) [None, 3, 29, 29, 29]
+2019-5-8 14:55:29.22: [Pathway_FC] done.
+2019-5-8 14:55:29.23: Adding the final Softmax Target layer...
+2019-5-8 14:55:29.27: Finished building the CNN's model.
+2019-5-8 14:55:29.27: =========== Compiling the Testing Function ============
+2019-5-8 14:55:29.28: =======================================================
+
+2019-5-8 14:55:29.28: ...Building the function for testing and visualisation of FMs...
+2019-5-8 14:55:29.28: ...Collecting ops and feeds for testing...
+2019-5-8 14:55:29.28: Done.
+2019-5-8 14:55:29.41: =========== Loading parameters from specified saved model ===============
+2019-5-8 14:55:29.41: Loading parameters from:D:\Develope\z\Brain\Core\hippoSegMedic\config\deepMedic.model.ckpt
+2019-5-8 14:55:29.64: Parameters were loaded.
+2019-5-8 14:55:29.64: 
+2019-5-8 14:55:29.64: ======================================================
+2019-5-8 14:55:29.65: =========== Testing with the CNN model ===============
+2019-5-8 14:55:29.65: ======================================================
+
+2019-5-8 14:55:29.65: ###########################################################################################################
+2019-5-8 14:55:29.65: ############################# Starting full Segmentation of Testing subjects ##########################
+2019-5-8 14:55:29.66: ###########################################################################################################
+2019-5-8 14:55:29.66: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2019-5-8 14:55:29.66: ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2019-5-8 14:55:29.66: Loading subject with 1st channel at: I:\DATA\Seg_data\XW_66_reg\Clean_MiniMMSE\NSN_r_TR_MR_02..nii
+2019-5-8 14:55:29.96: Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2019-5-8 14:55:30.03: Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2019-5-8 14:55:30.03: Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2019-5-8 14:55:30.03: Total number of Segments to process:100
+2019-5-8 14:55:30.04: Processed 20/100 segments.
+2019-5-8 14:56:9.00: Processed 40/100 segments.
+2019-5-8 14:56:48.66: Processed 60/100 segments.
+2019-5-8 14:57:28.41: Processed 80/100 segments.
+2019-5-8 14:58:8.48: Processed 100/100 segments.
+2019-5-8 14:58:48.37: TIMING: Segmentation of subject: [Extracting:] 0.02 [Loading:] 0.03 [ForwardPass:] 198.23 [Total:] 198.29 secs.
+2019-5-8 14:58:48.55: Saving the new label (segmentation) image for the subject #0
+2019-5-8 14:58:48.82: Image saved at: D:\Develope\z\Brain\Core\output\predictions\testSessionDm\predictions\NSN_r_TR_MR_02._Segm.nii.gz
+2019-5-8 14:58:48.82: TIMING: Testing process lasted: 199.16 secs.
+2019-5-8 14:58:48.82: ###########################################################################################################
+2019-5-8 14:58:48.82: ############################# Finished full Segmentation of Testing subjects ##########################
+2019-5-8 14:58:48.83: ###########################################################################################################
+2019-5-8 14:58:48.89: 
+2019-5-8 14:58:48.89: ======================================================
+2019-5-8 14:58:48.89: =========== Testing session finished =================
+2019-5-8 14:58:48.89: ======================================================
+2019-5-8 14:58:48.90: Finished.
