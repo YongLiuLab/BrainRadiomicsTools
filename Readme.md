@@ -17,7 +17,7 @@
 
 ## User Interface
 
-![image](https://github.com/gourdchen/BrainRadiomicsTools/images/main.png)
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/main.png)
 
 ## Function
 #### Preprocessing
