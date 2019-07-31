@@ -35,11 +35,19 @@ class RegWindow(QWidget,regUI.Ui_Form):
             self.directory2 = QFileDialog.getExistingDirectory(self, "Choose DIR", "./")
             self.LineResult.setText(self.directory2)
     def Cal(self):
-        self.BtnStart.setDisabled(True)
+
+        from Core.utils import checkFile,checkDir
         if self.RdioSingleFile.isChecked():
+            if checkFile(self.Image) == 1:
+                QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
+                return
             self.thread = calculate(self.Image, self.RefImage ,self.ResImage )
         else:
+            if len(checkDir(self.directory1)) == 0:
+                QMessageBox.information(self, "Warning", "The directory path is not valid!", QMessageBox.Yes)
+                return
             self.thread = calculate(self.directory1,self.RefImage,self.directory2,type=1)
+        self.BtnStart.setDisabled(True)
         self.thread.start()
         self.thread.signal.connect(self.process)
     def process(self,p):

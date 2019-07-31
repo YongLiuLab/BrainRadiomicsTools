@@ -33,6 +33,15 @@ class Segment(QDialog):
     def slot_run0(self):    # 避免UI堵塞，开启新线程
         # self.pb = ProgressBar()     # 进度条显示
         # self.pb.show()
+        from Core.utils import checkDir,checkFile
+        if self.ui.RadioBtn_Dir.ischecked():
+            if len(checkDir(self.filename_input)) == 0:
+                QMessageBox.information(self, "Warning", "The directory path is not valid!", QMessageBox.Yes)
+                return
+        else:
+            if checkFile(self.filename_input) == 1:
+                QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
+                return
         self.ui.run_pushButton.setDisabled(True)
         self.thread = RunThread(self.filename_input,self.directory_output,Type=self.ui.RadioBtn_Dir.isChecked())
         self.thread.trigger.connect(self.process)

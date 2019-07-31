@@ -37,10 +37,17 @@ class FeatureWindow(QWidget,featureUI.FeatureDialog):
         self.in3.setText(self.fileName)
 
     def runCal(self):
+        from Core.utils import checkFile,checkDir
         self.pbar.setValue(1)
         if (self.fileRadiobtn.isChecked()):
+            if checkFile(self.imageFile) == 1:
+                QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
+                return
             self.thread = RunThread(self.imageFile, self.maskFile, self.fileName ,type='singleFile')
         else:
+            if len(checkDir(self.directory1)) == 0:
+                QMessageBox.information(self, "Warning", "The directory path is not valid!", QMessageBox.Yes)
+                return
             self.thread = RunThread(self.directory1, self.directory2, self.fileName, type="dir")
         self.thread.start()
         # self.thread2 = procThread()

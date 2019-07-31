@@ -211,6 +211,6 @@ class batchCal(QThread):
             return
         self.signal.emit(100)
 
-        shutil.copytree(self.tempDir, self.outputPath)
+        shutil.copy(self.tempDir, self.outputPath)
         shutil.rmtree(self.tempDir, True)
         print("dir " + str(self.tempDir) + " removed!")

@@ -26,15 +26,8 @@ def convertDicoms(original_dicom_directory, output_file):
         msg += line.decode("gb2312")
     status = task.wait()
     # print(stdout.decode("gb2312"))
-    print(msg)
-    # while 1:
-    #     res = task.stdout.readline()
-    #     print(bytes.decode(res))
-    #     if(time.time()-t > 3*3600):
-    #         break
-    #     if file in str(res):
-    #         break
-    print("Success!")
+    # print(msg)
+    print("dicom2nii.py line 30!")
     try:
         move(os.path.join(temp, file), output_file)
         #rmtree(temp)

@@ -45,6 +45,5 @@ class calculate(QThread):
         # self._signal.emit(msg)
 
     def callback(self, msg):
-        # 信号焕发，我是通过我封装类的回调来发起的
         # self._signal.emit(msg)
         pass

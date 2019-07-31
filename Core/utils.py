@@ -11,6 +11,8 @@ def checkDir(path):
     images= []
     if not os.path.exists(path):
         return images
+    if not os.path.isdir(path):
+        return images
     for image in os.listdir(path):
         if image.endswith("nii") or image.endswith("nii.gz"):
           images.append(image)
@@ -21,6 +23,8 @@ def checkFile(path):
     :return: 0 / 1  0->the file is a valid nifti  1->the file is not a valid nifti
     '''
     if not os.path.exists(path):
+        return 1
+    if os.path.isdir(path):
         return 1
     if path.endswith("nii") or path.endswith("nii.gz"):
         return 0

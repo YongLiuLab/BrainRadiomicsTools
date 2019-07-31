@@ -26,6 +26,7 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
         self.dataCheckBox_2.clicked.connect(self.callbackCheck)
 
         self.chooseButton.clicked.connect(self.chooseDir)
+        self.chooseOutButton.clicked.connect(self.chooseOutputDir)
         self.dir = "../"
         self.outputDir = "../"
         self.startButton.clicked.connect(self.cal)
@@ -46,6 +47,7 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
             self.HsCheckBox.setDisabled(True)
             self.BsCheckBox_2.setChecked(True)
             self.HsCheckBox.setChecked(True)
+    #control the label color
     def ifCheck(self,checkBox,label,checkbox2=None):
         if checkbox2 is None:
             if (checkBox.isChecked()):
@@ -85,6 +87,16 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
             self.proImages.append(tmp)
         #QTableWidget.resizeColumnsToContents(self.table)
     def cal(self):
+
+        if len(self.images)== 0:
+            QMessageBox.information(self, "Warning", "The path is not valid!", QMessageBox.Yes)
+            return
+        if self.outputDir == "../" :
+            QMessageBox.information(self, "Warning", "Please choose output path", QMessageBox.Yes)
+            return
+        if not os.path.exists(self.outputDir):
+            os.makedirs(self.outputDir)
+        self.outputDir = os.path.join(self.outputDir,"BRT_OUTPUT")
         self.calthread = batchCal(self.dir,
                                   self.images,
                                   self.outputDir,
