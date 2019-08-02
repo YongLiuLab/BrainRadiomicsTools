@@ -17,7 +17,7 @@
 
 ## User Interface
 
-![image](https://github.com/gourdchen/BrainRadiomicsTools/images/main.png)
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/main.png)
 
 ## Function
 #### Preprocessing
@@ -56,6 +56,7 @@ A comparison of the parameters of the input image is performed using an inhouse 
 A detailed analysis report is given on the input image based on the reference range of brain volume and radiomics features
  derived from the inhouse datasets.
 ## Documentation
+
 Documentation will update later.
 
 ## References
