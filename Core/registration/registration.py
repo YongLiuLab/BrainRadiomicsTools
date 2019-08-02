@@ -1,19 +1,21 @@
 import os
 import subprocess
-path = os.path.split(os.path.realpath(__file__))[0]
-def registration(flo,res,ref=os.path.join(path,"../data/Ref.nii"),aff=os.path.join(path,"../temp.txt"),Queue = None,onlyRigid=False):
+from Core.setting import path,regTempDir
+def registration(flo,res,ref=os.path.join(path,"../data/Ref.nii"),aff=os.path.join(regTempDir,"temp.txt"),Queue = None,onlyRigid=False):
     '''
     :param flo:
     :param res:
     :param ref: options
     :param aff: options
-    :param Queue:
+    :param Queue: 
     :return:
     '''
-    p1 = os.path.join(path,"../../Binary/reg_aladin.exe")
-    p2 = os.path.join(path,"../../Binary/reg_f3d.exe")
+    if not os.path.exists(regTempDir):
+        os.mkdir(regTempDir)
+    p1 = os.path.join(path,"..","Binary/reg_aladin.exe")
+    p2 = os.path.join(path,"..","Binary/reg_f3d.exe")
     if(not os.path.isfile(ref)):
-        ref = os.path.join(path,"../../data/Ref.nii")
+        ref = os.path.join(path,"..","data/Ref.nii")
     if onlyRigid:
         task = subprocess.Popen('%s -ref %s -flo %s -aff %s -res %s '% (p1, ref, flo, aff,res), shell=True,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -21,9 +23,9 @@ def registration(flo,res,ref=os.path.join(path,"../data/Ref.nii"),aff=os.path.jo
         for line in task.stdout.readlines():
             msg += line.decode("gb2312")
         status = task.wait()
-        print('--------------aladin----------------------')
+        print('---------------------------------aladin_ouput-----------------------------------')
         print(msg)
-        print('-------------------------------------------')
+        print('--------------------------------------------------------------------------------')
         return 0
     task  = subprocess.Popen('%s -ref %s -flo %s -aff %s -res ../temp.nii' %  (p1,ref,flo,aff), shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     msg = ''

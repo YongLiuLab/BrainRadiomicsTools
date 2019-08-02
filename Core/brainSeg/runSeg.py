@@ -61,7 +61,9 @@ def runSeg(image_path,output_path,wm_path=None,csf_path=None):
     tmp_path = os.path.join(os.path.dirname(image_path),'_tmp',os.path.basename(image_path))
     if(not os.path.exists(os.path.dirname(tmp_path))):
         os.mkdir(os.path.dirname(tmp_path))
+    print("Start image processing")
     preprocess_img(image_path,tmp_path)
+    print("Complete image processing")
     image = {}
     image['image'] = tmp_path
     image['subject'] = os.path.basename(tmp_path)

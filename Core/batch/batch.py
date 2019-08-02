@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QThread, pyqtSignal
 from Core.hippoSeg import segment
 from Core.registration import registration
-from Core.setting import batchTempDir
+from Core.setting import globalTempDir
 from Core.N4Correct import N4correctWin,N4correct
 from Core.bet import Bet
 from Core import Feature
@@ -33,9 +33,9 @@ class batchCal(QThread):
         self.images = images
         self.outputPath =outputPath
         self.fileIndex = 0
-        if(not os.path.exists(batchTempDir)):
-            os.mkdir(batchTempDir)
-        self.tempDir = os.path.join(batchTempDir,time.strftime("%Y%m%d%H%M", time.localtime()))
+        if(not os.path.exists(globalTempDir)):
+            os.mkdir(globalTempDir)
+        self.tempDir = os.path.join(globalTempDir,time.strftime("%Y%m%d%H%M", time.localtime()))
         # 进度标志位 完成一项任务 +1
         self.progress = 0
 
@@ -114,7 +114,7 @@ class batchCal(QThread):
         self.signal.emit(self.progress)
         return WmLabelPath,GMLabelPath,CsfLabelPath
     def calFeature(self,imagePath,labelPath):
-        from utils import cleanImage
+        from Core.utils import cleanImage
         self.strSignal.emit("Image Feature Extraction ...")
         featureTemp = os.path.join(self.tempDir, "_featuretemp")
         self.featureTemp = featureTemp

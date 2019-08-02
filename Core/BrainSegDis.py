@@ -1,6 +1,6 @@
 from UI import bfcUI
 from PyQt5.QtWidgets import QWidget,QFileDialog,QMessageBox,QPushButton
-from Core.utils import checkDir,checkFile
+from Core.utils import checkFile,checkDir,checkOutputDir,checkOutputFile
 class BrinSegwindow(QWidget,bfcUI.Ui_BrainExtraction):
     def __init__(self,parent=None):
         super(BrinSegwindow,self).__init__(parent)
@@ -36,11 +36,11 @@ class BrinSegwindow(QWidget,bfcUI.Ui_BrainExtraction):
 
     def cal(self):
         if self.RadioSingle.isChecked():
-            if checkFile(self.imageFile) == 1:
+            if checkFile(self.imageFile) == 1 or checkOutputFile(self.outputPath) == 1:
                 QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
                 return
         else:
-            if len(checkDir(self.imageFile)) == 0:
+            if len(checkDir(self.imageFile)) == 0 or checkOutputDir(self.outputPath) == 1:
                 QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
                 return
         if((self.imageFile is None) and (self.outputPath is None)):

@@ -1,7 +1,7 @@
 from UI import bfcUI
 from PyQt5.QtWidgets import QWidget,QFileDialog,QMessageBox
 from Core.N4Correct import N4correctBatch,N4correct,N4correctWin
-from Core.utils import checkFile,checkDir
+
 class BFCwindow(QWidget,bfcUI.Ui_BrainExtraction):
     def __init__(self,parent=None):
         super(BFCwindow,self).__init__(parent)
@@ -32,15 +32,16 @@ class BFCwindow(QWidget,bfcUI.Ui_BrainExtraction):
             self.LineOutput.setText(self.outputPath)
 
     def cal(self):
+        from Core.utils import checkFile,checkDir,checkOutputDir,checkOutputFile
         if((not self.CheckNorm) and (not self.CheckBFC)):
             QMessageBox.information(self, "Warning", "Please Choose at least one function!", QMessageBox.Yes)
             return
         if self.RadioSingle.isChecked():
-            if checkFile(self.imageFile) == 1:
+            if checkFile(self.imageFile) == 1 or checkOutputFile(self.outputPath) ==1 :
                 QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
                 return
         else:
-            if len(checkDir(self.imageFile)) == 0:
+            if len(checkDir(self.imageFile)) == 0 or checkOutputDir(self.outputPath) == 1:
                 QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
                 return
         self.thread = calThread(self.imageFile, self.outputPath, self.CheckBFC.isChecked(),self.CheckNorm.isChecked(),self.RadioSingle.isChecked())

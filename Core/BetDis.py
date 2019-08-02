@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget,QFileDialog,QMessageBox
 from UI import betUI
-from Core.utils import checkDir,checkFile
+from Core.setting import selectRootPath
 class BetWindow(QWidget,betUI.Ui_BrainExtraction):
     def __init__(self,parent=None):
         super(BetWindow,self).__init__(parent)
@@ -10,6 +10,11 @@ class BetWindow(QWidget,betUI.Ui_BrainExtraction):
         self.BtnStart.clicked.connect(self.cal)
         self.RadioSingle.setChecked(True)
         self.RadioFast.setChecked(True)
+        
+        self.LineFile.setDisabled(True)
+        self.LineOutput.setDisabled(True)
+        self.imageFile = selectRootPath
+        self.outputPath = selectRootPath
     def chooseImage(self):
         if self.RadioSingle.isChecked():
             self.imageFile,ok = QFileDialog.getOpenFileName(self,"Open File","../","Nii File (*.nii);;Nii.gz (*.nii.gz)")
@@ -29,8 +34,13 @@ class BetWindow(QWidget,betUI.Ui_BrainExtraction):
         这里hd-bet内部自动会判断输入的是文件夹/文件，故没有判断
         :return:
         '''
+        from Core.utils import checkDir,checkFile,checkOutputFile,checkOutputDir
         if self.RadioSingle.isChecked():
-            if checkFile(self.imageFile) == 1:
+            if (checkFile(self.imageFile) == 1 or checkOutputFile(self.outputPath) == 1):
+                QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
+                return
+        else:
+            if (len(checkDir(self.imageFile)) == 0 or checkOutputDir(self.outputPath) == 1):
                 QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
                 return
         self.thread = calThread(self.imageFile,self.outputPath,self.RadioFast.isChecked())
@@ -51,9 +61,10 @@ class calThread(QThread):
         self.outputPath = output
         self.mode = mode
     def run(self):
-        from bet import Bet
+        from Core.bet import Bet
 
         #Bet.BrainExtract(self.inputPath, self.outputPath,mode=self.mode)
-
+        print("Brain Extraction Input Path :",self.inputPath)
+        print("Brain Extraction Output Path :",self.outputPath)
         Bet.BrainExtractFast(self.inputPath,self.outputPath)
         self.signal.emit(1)

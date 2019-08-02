@@ -17,7 +17,7 @@
 
 ## User Interface
 
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/main.png)
+![image](https://github.com/gourdchen/BrainRadiomicsTools/images/main.png)
 
 ## Function
 #### Preprocessing
@@ -52,8 +52,9 @@ Because of some problems about configure file, now the features can not be custo
  ````
 More about the pyradiomics,you can see the documentation of it:  https://pyradiomics.readthedocs.io/en/latest/
 #### Analysis
-A comparison of the parameters of the input image is performed using an inhouse dataset as a reference (beta).
-
+A comparison of the parameters of the input image is performed using an inhouse dataset as a reference (beta).  
+A detailed analysis report is given on the input image based on the reference range of brain volume and radiomics features
+ derived from the inhouse datasets.
 ## Documentation
 Documentation will update later.
 

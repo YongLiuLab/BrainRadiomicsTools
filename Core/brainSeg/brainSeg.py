@@ -21,9 +21,8 @@ def brainSeg(test_df,output_path,model="./models/model9900.vrn",input_shape=[80,
             n_tiles,
             4
         )
-        print("组织分割获得了结果，开始计算概率")
+        print("Segment Success")
         output /= np.sum(output, axis=0, keepdims=True)
-        print("概率计算成功！")
         #data = np.float32(output).transpose(1, 2, 3, 0)
         gm_data  = output[2,0:182,0:218,0:182]
         wm_data  = output[3,0:182,0:218,0:182]

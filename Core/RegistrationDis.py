@@ -3,6 +3,9 @@ from PyQt5.QtWidgets import QMessageBox, QWidget,  QFileDialog
 from PyQt5.QtCore import QThread,pyqtSignal
 from Core.registration import registration
 from UI import regUI
+from Core.setting import selectRootPath
+from Core.utils import checkDir
+import os
 class RegWindow(QWidget,regUI.Ui_Form):
     def __init__(self,parent=None):
         super(RegWindow,self).__init__(parent)
@@ -16,17 +19,32 @@ class RegWindow(QWidget,regUI.Ui_Form):
         self.LineRef.setDisabled(True)
         self.LineResult.setDisabled(True)
         self.LineImage.setDisabled(True)
+        self.selectRoot = selectRootPath 
+
+        self.imagePath = self.selectRoot
     def ImageSelect(self):
         if self.RdioSingleFile.isChecked():
-            self.Image,ok = QFileDialog.getOpenFileName(self,"Open File","../","Nii File (*.nii);;Nii.gz (*.nii.gz)")
-            self.LineImage.setText(self.Image)
+
+            self.imagePath,ok = QFileDialog.getOpenFileName(self,"Open File",self.selectRoot,"Nii File (*.nii);;Nii.gz (*.nii.gz)")
+            
+            if(self.imagePath != ""):
+                self.selectRoot = os.path.dirname(self.Image)
+
+            self.LineImage.setText(self.imagePath)
         else:
-            self.directory1 = QFileDialog.getExistingDirectory(self, "Choose DIR", "./")
-            self.LineImage.setText(self.directory1)
+            self.imagePath = QFileDialog.getExistingDirectory(self, "Choose DIR", self.selectRoot)
+            if(self.imagePath !=""):
+                self.selectRoot = self.imagePath
+            
+            self.LineImage.setText(self.imagePath)
     def RefSelect(self):
-        self.RefImage, ok = QFileDialog.getOpenFileName(self, "Open File", "../",
+        self.refImagePath, ok = QFileDialog.getOpenFileName(self, "Open File", self.selectRoot,
                                                          "Nii File (*.nii);;Nii.gz (*.nii.gz)")
-        self.LineRef.setText(self.RefImage)
+        
+        if(self.refImagePath != ""):
+            self.selectRoot = os.path.dirname(self.refImagePath)
+        
+        self.LineRef.setText(self.refImagePath)
     def ResSelect(self):
         if self.RdioSingleFile.isChecked():
             self.ResImage,ok = QFileDialog.getSaveFileName(self, "Save File", "../","Nii File (*.nii);;Nii.gz (*.nii.gz)")
@@ -90,7 +108,7 @@ class calculate(QThread):
         #batch mode
         else:
             self.signal.emit(0.01)
-            images = getFiles(self.image)
+            images = checkDir(self.image)
             i = 1
             for image in images:
                 registration(flo=image,res=os.path.join(self.resImage,"Reg"+os.path.basename(image)),ref=self.refImage)

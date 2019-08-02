@@ -1,1 +1,1 @@
-from .Dicom2nii import convertDicoms
+from .Dicom2nii import convertDicoms,convertDicom

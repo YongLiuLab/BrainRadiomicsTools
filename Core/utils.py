@@ -15,8 +15,21 @@ def checkDir(path):
         return images
     for image in os.listdir(path):
         if image.endswith("nii") or image.endswith("nii.gz"):
-          images.append(image)
+          images.append(os.path.join(path,image))
+    print("dir images:",images)
     return images
+def checkOutputFile(path):
+    if path is None or path == "":
+        return 1
+    if path.endswith("nii") or path.endswith("nii.gz"):
+        return 0
+def checkOutputDir(path):
+    if path is None or path == "":
+        return 1
+    if path.endswith("nii") or path.endswith("nii.gz"):
+        return 1
+    return 0
+
 def checkFile(path):
     '''
     :param path: file path

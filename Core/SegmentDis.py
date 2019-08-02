@@ -34,7 +34,7 @@ class Segment(QDialog):
         # self.pb = ProgressBar()     # 进度条显示
         # self.pb.show()
         from Core.utils import checkDir,checkFile
-        if self.ui.RadioBtn_Dir.ischecked():
+        if self.ui.RadioBtn_Dir.isChecked():
             if len(checkDir(self.filename_input)) == 0:
                 QMessageBox.information(self, "Warning", "The directory path is not valid!", QMessageBox.Yes)
                 return

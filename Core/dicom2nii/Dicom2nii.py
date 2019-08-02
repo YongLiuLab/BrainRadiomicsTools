@@ -2,15 +2,19 @@ import dicom2nifti
 import os
 import subprocess
 from shutil import move, rmtree
-
+from Core.setting import globalTempDir,path
 file = "cot1mprnssagiso.nii"
-path = os.path.split(os.path.realpath(__file__))[0]
 def convertDicom(original_dicom_directory, output_file):
-    dicom2nifti.dicom_series_to_nifti(original_dicom_directory, output_file, reorient_nifti=False)
+    print("Input dicom directory : ",original_dicom_directory)
+    print("Output nii file path : ",output_file)
+    try:
+        dicom2nifti.dicom_series_to_nifti(original_dicom_directory, output_file, reorient_nifti=False)
     # Registration.reg(output_file,output_file)
+    except Exception:
+        return 1
     return 0
 def convertDicoms(original_dicom_directory, output_file):
-    temp = os.path.join(path, "/TEMP_C/")
+    temp = os.path.join(globalTempDir, "/Dicom2niiTemp/")
     if not os.path.exists(temp):
         os.makedirs(temp)
     else:
@@ -27,7 +31,7 @@ def convertDicoms(original_dicom_directory, output_file):
     status = task.wait()
     # print(stdout.decode("gb2312"))
     # print(msg)
-    print("dicom2nii.py line 30!")
+    #print("dicom2nii.py line 30!")
     try:
         move(os.path.join(temp, file), output_file)
         #rmtree(temp)
