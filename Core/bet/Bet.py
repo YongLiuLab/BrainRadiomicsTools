@@ -46,8 +46,8 @@ def  BrainExtract(input_file_or_dir,output_file_or_dir,mode=True):
     :param mode: fast or acc True/False
     :return:
     '''
-    from bet.run import run_hd_bet
-    from bet.utils import maybe_mkdir_p, subfiles
+    from Core.bet.run import run_hd_bet
+    from Core.bet.utils import maybe_mkdir_p, subfiles
     if output_file_or_dir is None:
         output_file_or_dir = os.path.join(os.path.dirname(input_file_or_dir),
                                           os.path.basename(input_file_or_dir).split(".")[0] + "_bet")

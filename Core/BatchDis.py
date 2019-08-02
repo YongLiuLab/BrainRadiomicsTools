@@ -9,12 +9,12 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
         self.setupUi(self)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         #self.table.horizontalHeader().resizeSection(1, 50)
-        self.regCheckBox.setChecked(False)
-        self.betCheckBox.setChecked(True)
-        self.HsCheckBox.setChecked(True)
-        self.BsCheckBox_2.setChecked(True)
-        self.FeatureCheckBox.setChecked(True)
-        self.N4CheckBox.setChecked(True)
+        # self.regCheckBox.setChecked(False)
+        # self.betCheckBox.setChecked(True)
+        # self.HsCheckBox.setChecked(True)
+        # self.BsCheckBox_2.setChecked(True)
+        # self.FeatureCheckBox.setChecked(True)
+        # self.N4CheckBox.setChecked(True)
 
         #self.dicomCheckBox.clicked.connect(self.callbackCheck)
         self.regCheckBox.clicked.connect(self.callbackCheck)
@@ -25,40 +25,155 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
         self.FeatureCheckBox.clicked.connect(self.callbackCheck)
         self.dataCheckBox_2.clicked.connect(self.callbackCheck)
 
-        self.chooseButton.clicked.connect(self.chooseDir)
-        self.chooseOutButton.clicked.connect(self.chooseOutputDir)
+
+        self.PreprocessingcheckBox.clicked.connect(self.autoCheck)
+        self.SegCheckBox.clicked.connect(self.autoCheck)
+        self.AnalysisCheckBox.clicked.connect(self.autoCheck)
+
+        self.chooseInputButton.clicked.connect(self.chooseDir)
+        self.chooseOutputButton.clicked.connect(self.chooseOutputDir)
         self.dir = "../"
         self.outputDir = "../"
         self.startButton.clicked.connect(self.cal)
+
+        self.autoCheck()
     def callbackCheck(self):
         #self.ifCheck(self.dicomCheckBox,self.dicomLabel)
-        self.autoCheck()
+        #self.autoCheck()
 
         self.ifCheck(self.regCheckBox,self.regLabel)
         self.ifCheck(self.betCheckBox,self.betLabel)
         self.ifCheck(self.N4CheckBox,self.N4Label)
-        self.ifCheck(self.HsCheckBox,self.segLabel,self.BsCheckBox_2)
+        self.ifCheck(self.HsCheckBox,self.betLabel_2)
         self.ifCheck(self.FeatureCheckBox,self.FeatureLabel)
         self.ifCheck(self.dataCheckBox_2,self.dataLabel_2)
+        self.ifCheck(self.BsCheckBox_2,self.segLabel)
+
+        if(self.regCheckBox.isChecked() and self.betCheckBox.isChecked() and self.N4CheckBox.isChecked()):
+            self.PreprocessingcheckBox.setChecked(True)
+        else:
+            self.PreprocessingcheckBox.setChecked(False)
+
+        if(self.HsCheckBox.isChecked() and self.BsCheckBox_2.isChecked()):
+            self.SegCheckBox.setChecked(True)
+        else:
+            self.SegCheckBox.setChecked(False)
+        
+        if( self.dataCheckBox_2.isChecked() ):
+            self.AnalysisCheckBox.setChecked(True)
+
+            self.HsCheckBox.setDisabled(True)
+            self.HsCheckBox.setChecked(True)
+            
+            self.BsCheckBox_2.setChecked(True)
+            self.BsCheckBox_2.setDisabled(True)
+
+            self.FeatureCheckBox.setChecked(True)
+            self.FeatureCheckBox.setDisabled(True)
+        else:
+            self.AnalysisCheckBox.setChecked(False)
+            self.FeatureCheckBox.setDisabled(False)
+            self.BsCheckBox_2.setDisabled(False)
+
+        if(self.FeatureCheckBox.isChecked()):
+            self.HsCheckBox.setChecked(True)
+            self.HsCheckBox.setDisabled(True)
+        else:
+            self.HsCheckBox.setDisabled(False)
+        
+
+        if(self.HsCheckBox.isChecked() or self.BsCheckBox_2.isChecked()):
+            self.PreprocessingcheckBox.setChecked(True)
+            self.PreprocessingcheckBox.setDisabled(True)
+            self.PreprocessCheck()
+        else:
+            self.PreprocessingcheckBox.setDisabled(False)
+
+        
     # 检测 checkbox 的状态来改变前方label的颜色
     def autoCheck(self):
-        if(self.dataCheckBox_2.isChecked()):
-            self.BsCheckBox_2.setDisabled(True)
-            self.HsCheckBox.setDisabled(True)
-            self.BsCheckBox_2.setChecked(True)
-            self.HsCheckBox.setChecked(True)
-    #control the label color
-    def ifCheck(self,checkBox,label,checkbox2=None):
-        if checkbox2 is None:
-            if (checkBox.isChecked()):
-                self.labelCheck(label)
-            else:
-                self.labelUnCheck(label)
+        print("Checing")
+        if(self.AnalysisCheckBox.isChecked()):
+            self.SegCheckBox.setChecked(True)
+            self.SegCheckBox.setDisabled(True)
+
+            self.FeatureCheckBox.setChecked(True)
+            self.FeatureCheckBox.setDisabled(True)
+
+            self.dataCheckBox_2.setChecked(True)
+            self.dataCheckBox_2.setDisabled(True)
         else:
-            if(not checkbox2.isChecked() and not checkBox.isChecked()):
-                self.labelUnCheck(label)
-            else:
-                self.labelCheck(label)
+            self.SegCheckBox.setDisabled(False)
+            self.FeatureCheckBox.setChecked(False)
+            self.FeatureCheckBox.setDisabled(False)
+
+            self.dataCheckBox_2.setChecked(False)
+            self.dataCheckBox_2.setDisabled(False)
+
+        if(self.SegCheckBox.isChecked()):
+            self.PreprocessingcheckBox.setChecked(True)
+            self.PreprocessingcheckBox.setDisabled(True)
+
+            self.HsCheckBox.setChecked(True)
+            #self.HsCheckBox.setDisabled(True)
+
+            self.BsCheckBox_2.setChecked(True)
+            #self.BsCheckBox_2.setDisabled(True)
+        else:
+            self.PreprocessingcheckBox.setDisabled(False)
+            self.HsCheckBox.setChecked(False)
+            self.HsCheckBox.setDisabled(False)
+
+            self.BsCheckBox_2.setChecked(False)
+            self.BsCheckBox_2.setDisabled(False)
+
+
+        if(self.PreprocessingcheckBox.isChecked()):
+            self.regCheckBox.setChecked(True)
+            self.regCheckBox.setDisabled(True)
+            
+            self.betCheckBox.setChecked(True)
+            self.betCheckBox.setDisabled(True)
+            
+            self.N4CheckBox.setChecked(True)
+            self.N4CheckBox.setDisabled(True)
+        else:
+            self.regCheckBox.setChecked(False)
+            self.regCheckBox.setDisabled(False)
+            
+            self.betCheckBox.setChecked(False)
+            self.betCheckBox.setDisabled(False)
+            
+            self.N4CheckBox.setChecked(False)
+            self.N4CheckBox.setDisabled(False)
+        
+        self.callbackCheck()
+        
+    #control the label color
+    def PreprocessCheck(self):
+        if(self.PreprocessingcheckBox.isChecked()):
+            self.regCheckBox.setChecked(True)
+            self.regCheckBox.setDisabled(True)
+            
+            self.betCheckBox.setChecked(True)
+            self.betCheckBox.setDisabled(True)
+            
+            self.N4CheckBox.setChecked(True)
+            self.N4CheckBox.setDisabled(True)
+        else:
+            self.regCheckBox.setChecked(False)
+            self.regCheckBox.setDisabled(False)
+            
+            self.betCheckBox.setChecked(False)
+            self.betCheckBox.setDisabled(False)
+            
+            self.N4CheckBox.setChecked(False)
+            self.N4CheckBox.setDisabled(False)
+    def ifCheck(self,checkBox,label):
+        if (checkBox.isChecked()):
+            self.labelCheck(label)
+        else:
+            self.labelUnCheck(label)
     def labelCheck(self,label):
         label.setStyleSheet("background:green;")
     def labelUnCheck(self,label):
@@ -67,8 +182,15 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
         pass
     def chooseOutputDir(self):
         self.outputDir = QFileDialog.getExistingDirectory(self, "Choose DIR", self.dir)
+        if self.outputDir == "":
+            return
+        self.label_2.setText(self.outputDir)
+        
     def chooseDir(self):
         self.dir = QFileDialog.getExistingDirectory(self, "Choose DIR", self.dir)
+        if self.dir == "":
+            return
+        self.label.setText(dir)
         files = os.listdir(self.dir)
         self.images = []
         for f in files:

@@ -6,6 +6,7 @@ import SimpleITK as sitk
 import numpy as np
 import pandas as pd
 from Core.brainSeg import brainSeg
+import time
 def preprocess_img(inputfile, output_preprocessed, zooms=[1,1,1]):
     img = nib.load(inputfile)
     data = img.get_data()
@@ -61,9 +62,9 @@ def runSeg(image_path,output_path,wm_path=None,csf_path=None):
     tmp_path = os.path.join(os.path.dirname(image_path),'_tmp',os.path.basename(image_path))
     if(not os.path.exists(os.path.dirname(tmp_path))):
         os.mkdir(os.path.dirname(tmp_path))
-    print("Start image processing")
+    print(time.strftime("%H:%M:%S", time.localtime())," Start image processing")
     preprocess_img(image_path,tmp_path)
-    print("Complete image processing")
+    print(time.strftime("%H:%M:%S", time.localtime())," Complete image processing")
     image = {}
     image['image'] = tmp_path
     image['subject'] = os.path.basename(tmp_path)

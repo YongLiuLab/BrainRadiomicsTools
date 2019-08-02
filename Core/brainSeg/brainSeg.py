@@ -6,6 +6,10 @@ from .model import VoxResNet
 from .utils import crop_patch, load_nifti, feedforward
 
 def brainSeg(test_df,output_path,model="./models/model9900.vrn",input_shape=[80,80,80],output_shape=[60,60,60],n_tiles=[4,4,4]):
+    import time
+ 
+    # 格式化成2016-03-20 11:45:39形式
+    
     path = os.path.abspath(__file__)
     model_path = os.path.join(os.path.dirname(path),model)
     vrn = VoxResNet(2, 4)
@@ -21,7 +25,7 @@ def brainSeg(test_df,output_path,model="./models/model9900.vrn",input_shape=[80,
             n_tiles,
             4
         )
-        print("Segment Success")
+        print(time.strftime("%H:%M:%S", time.localtime())," Segment Success")
         output /= np.sum(output, axis=0, keepdims=True)
         #data = np.float32(output).transpose(1, 2, 3, 0)
         gm_data  = output[2,0:182,0:218,0:182]
