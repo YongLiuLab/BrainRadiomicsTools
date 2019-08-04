@@ -5,7 +5,7 @@ from Core.setting import globalTempDir
 from Core.N4Correct import N4correctWin,N4correct
 from Core.bet import Bet
 from Core import Feature
-from Core.utils import cleanImage
+from Core.utils import cleanImage,getAllFilesFromDir
 import SimpleITK as sitk
 import numpy as np
 import os
@@ -42,7 +42,7 @@ class batchCal(QThread):
         if(not os.path.exists(self.tempDir)):
             os.mkdir(self.tempDir)
     def calReg(self,path):
-        self.strSignal.emit("Image Registration ...")
+        self.strSignal.emit(str(time.strftime("%H:%M:%S", time.localtime())) + " Image Registration ... ")
         regTemp = os.path.realpath(os.path.join(self.tempDir,"_regtemp"))
         if(not os.path.exists(regTemp)):
             os.mkdir(regTemp)
@@ -55,7 +55,7 @@ class batchCal(QThread):
         return os.path.join(regTemp,os.path.basename(path))
     #only n4 not normalise
     def calN4(self,path):
-        self.strSignal.emit("Image N4 bias Correction ...")
+        self.strSignal.emit(str(time.strftime("%H:%M:%S", time.localtime())) + "Image N4 bias Correction ...")
         n4Temp = os.path.join(self.tempDir,"_n4temp")
         if(not os.path.exists(n4Temp)):
             os.mkdir(n4Temp)
@@ -69,16 +69,13 @@ class batchCal(QThread):
         return outPath
 
     def calBet(self,path):
-        self.strSignal.emit("Image Brain Extraction ...")
+        self.strSignal.emit(str(time.strftime("%H:%M:%S", time.localtime())) + "Image Brain Extraction ...")
         betTemp = os.path.join(self.tempDir, "_bettemp")
         if (not os.path.exists(betTemp)):
             os.mkdir(betTemp)
         outPath = os.path.join(betTemp, os.path.basename(path))
         outPath = os.path.realpath(outPath)
-        self.progress += 1
-        self.signal.emit(self.progress)
-        print(outPath)
-
+        print("Bet output path :",outPath)
         #Bet.BrainExtract(path, outPath)
         Bet.BrainExtractFast(path,outPath)
         self.progress += 1
@@ -88,7 +85,7 @@ class batchCal(QThread):
         return outPath
 
     def calHs(self,path):
-        self.strSignal.emit("Image Hippocampus Segmentation ...")
+        self.strSignal.emit(str(time.strftime("%H:%M:%S", time.localtime())) + "Image Hippocampus Segmentation ...")
         hsTemp = os.path.join(self.tempDir, "_hstemp")
         if (not os.path.exists(hsTemp)):
             os.mkdir(hsTemp)
@@ -96,6 +93,7 @@ class batchCal(QThread):
         segment(path,outPath,Type=False)
         # outputpath = seg... + 原文件名
         outFilePath = os.path.join(outPath,"Segmentation_"+os.path.basename(path))
+        
         cleanImagePath = os.path.join(outPath,"Hippo_"+os.path.basename(path))
         cleanImage(outFilePath,cleanImagePath)
         self.progress += 1
@@ -103,7 +101,7 @@ class batchCal(QThread):
         return cleanImagePath
     def calBs(self,path):
         from Core.brainSeg import runSeg
-        self.strSignal.emit("Image Brain Segmentation ...")
+        self.strSignal.emit(str(time.strftime("%H:%M:%S", time.localtime())) + "Image Brain Segmentation ...")
         bsTemp = os.path.join(self.tempDir, "_bstemp")
         if (not os.path.exists(bsTemp)):
             os.mkdir(bsTemp)
@@ -115,7 +113,7 @@ class batchCal(QThread):
         return WmLabelPath,GMLabelPath,CsfLabelPath
     def calFeature(self,imagePath,labelPath):
         from Core.utils import cleanImage
-        self.strSignal.emit("Image Feature Extraction ...")
+        self.strSignal.emit(str(time.strftime("%H:%M:%S", time.localtime())) + "Image Feature Extraction ...")
         featureTemp = os.path.join(self.tempDir, "_featuretemp")
         self.featureTemp = featureTemp
         if (not os.path.exists(featureTemp)):
@@ -203,14 +201,30 @@ class batchCal(QThread):
                     dataPath = self.calData(featurePath,WmLabelPath,GMLabelPath,CsfLabelPath,HippoLabelPath,baseImagePath)
                 self.fileSignal.emit(self.fileIndex)
                 self.fileIndex += 1
-                print("结束循环！")
+ 
             if (self.isFeature):
                 self.csvMerg()
-        except Exception:
+        except Exception as e:
+            print(str(e))
             self.signal.emit(-1)
+            self.strSignal.emit(str(e))
             return
         self.signal.emit(100)
-
-        shutil.copy(self.tempDir, self.outputPath)
-        shutil.rmtree(self.tempDir, True)
-        print("dir " + str(self.tempDir) + " removed!")
+        #files = getAllFilesFromDir(self.tempDir)
+        #if output is a exists dir
+        if(os.path.exists(self.outputPath)):
+            files = os.listdir(self.tempDir)   
+            for fileOrDir in files:
+                if(os.path.isdir(os.path.join(self.tempDir,fileOrDir))):
+                    if(os.path.exists(os.path.join(self.outputPath,fileOrDir))):
+                        
+                        for littleFile in os.listdir(os.path.join(self.tempDir,fileOrDir)):
+                            if os.path.exists(os.path.join(self.outputPath,fileOrDir,littleFile)):
+                                os.remove(os.path.join(self.outputPath,fileOrDir,littleFile))
+                            shutil.copy(os.path.join(self.tempDir,fileOrDir,littleFile), os.path.join(self.outputPath,fileOrDir,littleFile))
+                    else:
+                        shutil.copytree(os.path.join(self.tempDir,fileOrDir),os.path.join(self.outputPath,fileOrDir))
+        else:
+            shutil.copytree(self.tempDir, self.outputPath)
+            shutil.rmtree(self.tempDir, True)
+        print("The temp directory :" + str(self.tempDir) + " has removed!")

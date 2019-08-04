@@ -99,6 +99,13 @@ def cleanImage(imagePath,outputPath):
     segmentation[segmentation > 1 ] = 1
     nib.Nifti1Image(segmentation,image.affine).to_filename(outputPath)
 
+
+def getAllFilesFromDir(path):
+    imageList = []
+    for parent, dirnames, filenames in os.walk(path):
+        for filename in filenames:
+            imageList.append(os.path.join(parent, filename))
+    return imageList
 if __name__ == '__main__':
     image = sitk.ReadImage("D:\Data\data-PL_S\img/1_NC001.nii")
     make_headmask(image)

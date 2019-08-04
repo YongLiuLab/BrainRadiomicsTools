@@ -76,7 +76,7 @@ def runSeg(image_path,output_path,wm_path=None,csf_path=None):
     #for subject,label in zip(sorted(os.listdir(image_path)),sorted(os.listdir(label_path))):
     #     preprocess_img(os.path.join(image_path,subject),os.path.join(process_path,'img',subject))
      #    preprocess_label(os.path.join(label_path,label),os.path.join(process_path,'label',label))
-
+    print(time.strftime("%H:%M:%S", time.localtime())," Complete image Brain Segmentation")
     return WmLabelPath,GMLabelPath,CsfLabelPath
 def batchSeg(image_path,output_path):
     tmp_path = os.path.join(os.path.dirname(image_path), '_tmp_process')

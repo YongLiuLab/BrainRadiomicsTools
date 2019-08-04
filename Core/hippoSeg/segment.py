@@ -3,6 +3,9 @@ from Core import setting
 from Core.hippoSeg import networkSegmentation as net
 from backports import configparser as ConfigParser
 from Core.setting import path
+from Core.utils import checkDir
+import nibabel as nib
+import numpy as np
 def segment(filename_input,directory_output ,Type=False):
     '''
     :param filename_input: input dir or filename
@@ -23,7 +26,21 @@ def segment(filename_input,directory_output ,Type=False):
     if Type:
         num = str([i for i in range(len(os.listdir(filename_input)))])
         iniFile.write(filepath, "imagesFolder")
+        images = checkDir(filepath)
+        for image in images:
+            idata = nib.load(image)
+            data = idata.get_fdata()
+            affine = idata.affine
+            data = (data - np.mean(data.flatten()))/np.std(data.flatten())
+        
+            nib.Nifti1Image(data,affine).to_filename(image)
     else:
+        idata = nib.load(filepath)
+        data = idata.get_fdata()
+        affine = idata.affine
+        data = (data - np.mean(data.flatten()))/np.std(data.flatten())
+        nib.Nifti1Image(data,affine).to_filename(filepath)
+
         getNum = lambda file_path,file_name : os.listdir(file_path).index(file_name)
         num = [getNum(os.path.dirname(filepath), os.path.basename(filepath))]  # 获得文件的索引值
         iniFile.write(os.path.dirname(filepath), "imagesFolder")

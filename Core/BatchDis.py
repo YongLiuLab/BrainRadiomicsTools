@@ -8,15 +8,7 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
         super(Batchwindow,self).__init__(parent)
         self.setupUi(self)
         self.table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-        #self.table.horizontalHeader().resizeSection(1, 50)
-        # self.regCheckBox.setChecked(False)
-        # self.betCheckBox.setChecked(True)
-        # self.HsCheckBox.setChecked(True)
-        # self.BsCheckBox_2.setChecked(True)
-        # self.FeatureCheckBox.setChecked(True)
-        # self.N4CheckBox.setChecked(True)
 
-        #self.dicomCheckBox.clicked.connect(self.callbackCheck)
         self.regCheckBox.clicked.connect(self.callbackCheck)
         self.betCheckBox.clicked.connect(self.callbackCheck)
         self.N4CheckBox.clicked.connect(self.callbackCheck)
@@ -184,13 +176,13 @@ class Batchwindow(QWidget,batchUI.Ui_Form):
         self.outputDir = QFileDialog.getExistingDirectory(self, "Choose DIR", self.dir)
         if self.outputDir == "":
             return
-        self.label_2.setText(self.outputDir)
+        self.lineEdit_2.setText(self.outputDir)
         
     def chooseDir(self):
         self.dir = QFileDialog.getExistingDirectory(self, "Choose DIR", self.dir)
         if self.dir == "":
             return
-        self.label.setText(dir)
+        self.lineEdit.setText(self.dir)
         files = os.listdir(self.dir)
         self.images = []
         for f in files:
