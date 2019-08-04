@@ -167,7 +167,8 @@ class batchCal(QThread):
         self.dataTemp = os.path.realpath(os.path.join(self.tempDir, "_datatemp"))
         if (not os.path.exists(self.dataTemp)):
             os.mkdir(self.dataTemp)
-
+        self.progress += 1
+        self.signal.emit(self.progress)
         reportBuild(featurePath,wmPath,gmPath,csfPath,hippoPath,originImagePath,tempDir=self.dataTemp)
 
     def plotImage(self):

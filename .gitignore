@@ -68,3 +68,5 @@ UI/__pycache__/
 *.pyc
 test/1_NC001.nii
 test/
+Core/feature.csv
+Core/hard_classif2.nii
