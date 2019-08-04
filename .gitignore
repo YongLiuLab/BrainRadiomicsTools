@@ -66,3 +66,5 @@ Core/__pycache__/
 Core/batch/__pycache__/
 UI/__pycache__/
 *.pyc
+test/1_NC001.nii
+test/
