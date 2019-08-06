@@ -7,10 +7,19 @@ from multiprocessing import Queue
 import os
 import SimpleITK as sitk
 Q = Queue()
-class FeatureWindow(QWidget,featureUI.FeatureDialog):
+class FeatureWindow(QWidget,featureUI.Ui_Feature):
     def __init__(self,parent=None):
         super(FeatureWindow,self).__init__(parent=parent)
-        self.initUI()
+        self.setupUi(self)
+        self.pbar.setValue(0)
+        self.chooseImageBtn.clicked.connect(self.chooseImage)
+        self.chooseMaskBtn.clicked.connect(self.chooseMask)
+        self.btn3.clicked.connect(self.outputFile)
+        self.btnStart.clicked.connect(self.runCal)
+        self.lineTextImage.setReadOnly(True)
+        self.lineTextMask.setReadOnly(True)
+        self.in3.setReadOnly(True)
+        self.fileRadiobtn.setChecked(True)
     def chooseImage(self):
         if self.fileRadiobtn.isChecked():
             self.imageFile, ok = QFileDialog.getOpenFileName(self, "Open File", "../",
@@ -53,8 +62,8 @@ class FeatureWindow(QWidget,featureUI.FeatureDialog):
         # self.thread2 = procThread()
         # self.thread2.start()
         self.thread.trigger.connect(self.process)
-        self.btn4.setText("Calculating...")
-        self.btn4.setDisabled(True)
+        self.btnStart.setText("Calculating...")
+        self.btnStart.setDisabled(True)
 
     def process(self, p):
         self.pbar.setValue(p)
