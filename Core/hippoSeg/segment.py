@@ -32,14 +32,15 @@ def segment(filename_input,directory_output ,Type=False):
             data = idata.get_fdata()
             affine = idata.affine
             data = (data - np.mean(data.flatten()))/np.std(data.flatten())
-        
-            nib.Nifti1Image(data,affine).to_filename(image)
+
+            nib.save(nib.Nifti1Image(data,affine).to_filename(image))
     else:
         idata = nib.load(filepath)
         data = idata.get_fdata()
         affine = idata.affine
+        
         data = (data - np.mean(data.flatten()))/np.std(data.flatten())
-        nib.Nifti1Image(data,affine).to_filename(filepath)
+        nib.save(nib.Nifti1Image(data,affine),filepath)
 
         getNum = lambda file_path,file_name : os.listdir(file_path).index(file_name)
         num = [getNum(os.path.dirname(filepath), os.path.basename(filepath))]  # 获得文件的索引值

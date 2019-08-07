@@ -8,12 +8,18 @@
 ## Install
 
   The tools is a python based program,it can execute in Windows now(some function may error in Linux and Mac OS),
-  The installation script is not completed yet, but here is a file `environment.yaml` describing which python packages are required for this tool.
+  The installation script is not completed yet, but here is a file `environment.yaml` and `requirement.txt` describing which python packages are required for this tool.
   
   It is recommended to use Anaconda(Miniconda) for environment configuration,the most important package is theano,there will be
   some problem in the installation of theano.The key of the installation is installing mingw by conda.
-  
-  Use the `python Main.py` to run tool after completing the dependency package installation.
+
+  1. If you don't have conda envirment,please install the Anaconda or Miniconda
+  2. Open the CMD.exe and use conda to create a new env such as : `conda create -n brainTools python=3.6`
+  3. Then activate the conda env : `conda activate brainTools`
+  4. Install the mingw by conda : `conda install mingw libpython -y`
+  5. Install the packages by pip :  `pip install -r requirement.txt`
+
+  In the end, ensure the new env is activated and use the `python Main.py` to run tool after completing the dependency package installation.
 
 ## User Interface
 
