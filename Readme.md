@@ -1,4 +1,4 @@
-# BrainRadiomicsTools 
+# BrainRadiomicsTools
 
   BrainRadiomicsTools is a radiomics tool that includes multiple brain image processing tools.It has many functions 
   such as registration、N4 bias correction、hippocampus segment and feature calculating.Now it can automatically 
@@ -37,9 +37,9 @@
    `by ANTs / SimpleITK`
 #### Segmentation
 Segmentation functions include hippocampus segmentation and brain segmentation.The two neural networks are trained by inhouse datasets, and tools use the trained models.
-1. Hippocampus Segment
+1. Hippocampus Segmentation
    `by https://github.com/josedolz/LiviaNET`
-2. Brain Segment(Wm,Gm,Csf)
+2. Brain Tissue Segmentation(Wm,Gm,Csf)
    `by https://github.com/Ryo-Ito/brain_segmentation`
 #### Feature Calculating
 Calculate the radiomics features `by pyradiomics`.  
@@ -62,9 +62,24 @@ A comparison of the parameters of the input image is performed using an inhouse 
 A detailed analysis report is given on the input image based on the reference range of brain volume and radiomics features
  derived from the inhouse datasets.
 ## Documentation
-
-Documentation will update later.
-
+There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.  
+#### Batch 
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/batch.png)
+It is recommended to use `batch` to process images.
+#### Dicom2Nifti
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/dicom.png)
+#### Registration
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/reg.png)
+#### Brain extraction
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/bet.png)
+#### Bias field correction
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/bfc.png)
+#### Hippocampus segmentation
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/hs.png)
+#### Brain tissue segmentation
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/bs.png)
+#### Feature caculating
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/feature.png)
 ## References
 ````
 [1] Chen, Hao, et al. "VoxResNet: Deep Voxelwise Residual Networks for Volumetric Brain Segmentation." arXiv preprint arXiv:1608.05895 (2016).
