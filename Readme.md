@@ -5,7 +5,7 @@
   segment and calculate about 2000 radiomics features of the hippocampus.
   **The feature about this tool is that it has a good user interface,you can do all the work with the mouse.**
   
-## Install
+# Install
 
   The tools is a python based program,it can execute in Windows now(some function may error in Linux and Mac OS),
   The installation script is not completed yet, but here is a file `environment.yaml` and `requirement.txt` describing which python packages are required for this tool.
@@ -21,12 +21,12 @@
 
   In the end, ensure the new env is activated and use the `python Main.py` to run tool after completing the dependency package installation.
 
-## User Interface
+# User Interface
 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/main.png)
 
-## Function
-#### Preprocessing
+# Function
+### Preprocessing
 1. dicom2nifti
    ` by dicom2nifti python package`
 2. registration
@@ -35,14 +35,14 @@
    `by FSL BET`
 4. N4 bias correction
    `by ANTs / SimpleITK`
-#### Segmentation
+### Segmentation
 Segmentation functions include hippocampus segmentation and brain segmentation.The two neural networks are trained by inhouse datasets, and tools use the trained models.
 1. Hippocampus Segmentation  
    `by https://github.com/josedolz/LiviaNET`
    
 2. Brain Tissue Segmentation(Wm,Gm,Csf)  
    `by https://github.com/Ryo-Ito/brain_segmentation`
-#### Feature Calculating
+### Feature Calculating
 Calculate the radiomics features `by pyradiomics`.  
 Enable all the features and the following 9 image types,the inputs include the origin image and the ROI.  
 Because of some problems about configure file, now the features can not be customized,and it will update later.
@@ -58,13 +58,13 @@ Because of some problems about configure file, now the features can not be custo
     LBP3D
  ````
 More about the pyradiomics,you can see the documentation of it:  https://pyradiomics.readthedocs.io/en/latest/
-#### Analysis
+### Analysis
 A comparison of the parameters of the input image is performed using an inhouse dataset as a reference (beta).  
 A detailed analysis report is given on the input image based on the reference range of brain volume and radiomics features
  derived from the inhouse datasets.
-## Documentation
+# Documentation
 There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.It is recommended to use *batch* to process images,and you can also use  *function module* to process images.  
-### Batch 
+## Batch 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/batch.png)  
 
 *Batch* can call all the function of the program,and you can use *batch* as follows:  
@@ -72,46 +72,46 @@ There are many functions in the software,each of them can be used independently,
 2. Choose the input and ouput directory by click the button on the right.
 3. Click the Start button and wait for the completion.
 
-### Function module
+## Function module
 The most of function modules have two operating mode: *single file* and *directory batch*,
 you can switch the mode by checking the radio button in the top of the window.It is worth to notice that each module has only one function,such as the *Hippocampus segmentation* only do the hippocampus segment without any preprocessing.
-#### Dicom2Nifti
+### Dicom2Nifti
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/dicom.png)  
      &ensp;**Input**: the directory of the dicom image file  
      &ensp;**Output**: the Nifti image file  
-#### Registration
+### Registration
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/reg.png)  
 &ensp;**Input**: the original image or directory of the original image file.  
 &ensp;**Output**: the registered image.  
 If you do not choose the `ref image`, we will use the `MMNI ICBM-152(182*218*182 mm)` to register your image.
-#### Brain extraction
+### Brain extraction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bet.png)  
 &ensp;**Input**: the image or directory of the image file.  
 &ensp;**Output**: the image with the brain and the mask of brain.  
-#### Bias field correction
+### Bias field correction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bfc.png)  
 &ensp;**Input**: the image or directory of the image file.  
 &ensp;**Output**: the ouput is the processed image.  
 You can check bias field correction and normalization.
-#### Hippocampus segmentation 
+### Hippocampus segmentation 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/hs.png)  
 &ensp;**Input**: the image or directory of the image file. The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).  
 &ensp;**Output**: the ouput is the mask of the hippocampus.   
-#### Brain tissue segmentation
+### Brain tissue segmentation
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bs.png)  
 &ensp;**Input**: The input is the image or directory of the origin image file The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).  
 &ensp;**Output**: The ouput is the probability segmentation of gm, wm and csf.  
-#### Feature caculating
+### Feature caculating
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/feature.png)  
 &ensp;**Input**: The image or directory of the image file, the ROI and image must have a one-to-one correspondence.  
 If you input one image, you have to input one mask file, and the parameters of nifti file between the image and the ROI is the same. If your input is a directory, the ROI must be a directory, and the sequence of the image in the image directory is the same as the sequence of the ROI in the ROI directory.   
 &ensp;**Output**: a csv file, one file occupies one row, and features arranged in columns.
-## Operation Example
+# Operation Example
 
-## References
+# References
 ````
 [1] Chen, Hao, et al. "VoxResNet: Deep Voxelwise Residual Networks for Volumetric Brain Segmentation." arXiv preprint arXiv:1608.05895 (2016).
 [2] Dolz J , Desrosiers C , Ayed I B . 3D fully convolutional networks for subcortical segmentation in MRI: A large-scale study[J]. NeuroImage, 2017:S1053811917303324.
 ````
-## Licence
+# Licence
 This program is covered by the Apache License 2.0.
