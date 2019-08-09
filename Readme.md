@@ -23,7 +23,7 @@
 
 ## User Interface
 
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/main.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/main.png)
 
 ## Function
 #### Preprocessing
@@ -37,9 +37,10 @@
    `by ANTs / SimpleITK`
 #### Segmentation
 Segmentation functions include hippocampus segmentation and brain segmentation.The two neural networks are trained by inhouse datasets, and tools use the trained models.
-1. Hippocampus Segmentation
+1. Hippocampus Segmentation  
    `by https://github.com/josedolz/LiviaNET`
-2. Brain Tissue Segmentation(Wm,Gm,Csf)
+   
+2. Brain Tissue Segmentation(Wm,Gm,Csf)  
    `by https://github.com/Ryo-Ito/brain_segmentation`
 #### Feature Calculating
 Calculate the radiomics features `by pyradiomics`.  
@@ -64,27 +65,28 @@ A detailed analysis report is given on the input image based on the reference ra
 ## Documentation
 There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.  
 ### Batch 
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/batch.png)  
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/batch.png)  
 
 It is recommended to use `batch` to process images.You can use `batch` as follows:  
 1. Check the function you want by checking the checkbox on the left.
 2. Choose the input and ouput directory by click the button on the right.
 3. Click the Start button and wait for the completion.
 
+### 
 #### Dicom2Nifti
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/dicom.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/dicom.png)
 #### Registration
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/reg.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/reg.png)
 #### Brain extraction
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/bet.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bet.png)
 #### Bias field correction
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/bfc.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bfc.png)
 #### Hippocampus segmentation
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/hs.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/hs.png)
 #### Brain tissue segmentation
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/bs.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bs.png)
 #### Feature caculating
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/feature.png)
+![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/feature.png)
 ## References
 ````
 [1] Chen, Hao, et al. "VoxResNet: Deep Voxelwise Residual Networks for Volumetric Brain Segmentation." arXiv preprint arXiv:1608.05895 (2016).

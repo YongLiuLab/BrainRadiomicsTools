@@ -15,20 +15,23 @@ class RegWindow(QWidget,regUI.Ui_Form):
         self.BtnResult.clicked.connect(self.ResSelect)
         self.RdioSingleFile.setChecked(True)
         self.BtnStart.clicked.connect(self.Cal)
-        self.RefImage = None
+        self.refImagePath = None
         self.LineRef.setDisabled(True)
         self.LineResult.setDisabled(True)
         self.LineImage.setDisabled(True)
         self.selectRoot = selectRootPath 
+        self.ProcessBar.setValue(0)
 
         self.imagePath = self.selectRoot
+        self.ResImage = None
+        
     def ImageSelect(self):
         if self.RdioSingleFile.isChecked():
 
             self.imagePath,ok = QFileDialog.getOpenFileName(self,"Open File",self.selectRoot,"Nii File (*.nii);;Nii.gz (*.nii.gz)")
             
             if(self.imagePath != ""):
-                self.selectRoot = os.path.dirname(self.Image)
+                self.selectRoot = os.path.dirname(self.imagePath)
 
             self.LineImage.setText(self.imagePath)
         else:
@@ -41,7 +44,7 @@ class RegWindow(QWidget,regUI.Ui_Form):
         self.refImagePath, ok = QFileDialog.getOpenFileName(self, "Open File", self.selectRoot,
                                                          "Nii File (*.nii);;Nii.gz (*.nii.gz)")
         
-        if(self.refImagePath != ""):
+        if(self.refImagePath != "" and self.RefImagePath is not None):
             self.selectRoot = os.path.dirname(self.refImagePath)
         
         self.LineRef.setText(self.refImagePath)
@@ -56,10 +59,10 @@ class RegWindow(QWidget,regUI.Ui_Form):
 
         from Core.utils import checkFile,checkDir
         if self.RdioSingleFile.isChecked():
-            if checkFile(self.Image) == 1:
+            if checkFile(self.imagePath) == 1:
                 QMessageBox.information(self, "Warning", "The image path is not valid!", QMessageBox.Yes)
                 return
-            self.thread = calculate(self.Image, self.RefImage ,self.ResImage )
+            self.thread = calculate(self.imagePath, self.refImagePath ,self.ResImage )
         else:
             if len(checkDir(self.directory1)) == 0:
                 QMessageBox.information(self, "Warning", "The directory path is not valid!", QMessageBox.Yes)

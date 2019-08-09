@@ -35,6 +35,7 @@ def segment(filename_input,directory_output ,Type=False):
 
             nib.save(nib.Nifti1Image(data,affine).to_filename(image))
     else:
+        
         idata = nib.load(filepath)
         data = idata.get_fdata()
         affine = idata.affine
