@@ -63,30 +63,43 @@ A comparison of the parameters of the input image is performed using an inhouse 
 A detailed analysis report is given on the input image based on the reference range of brain volume and radiomics features
  derived from the inhouse datasets.
 ## Documentation
-There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.  
+There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.It is recommended to use *batch* to process images,and you can also use  *function module* to process images.  
 ### Batch 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/batch.png)  
 
-It is recommended to use `batch` to process images.You can use `batch` as follows:  
+*Batch* can call all the function of the program,and you can use *batch* as follows:  
 1. Check the function you want by checking the checkbox on the left.
 2. Choose the input and ouput directory by click the button on the right.
 3. Click the Start button and wait for the completion.
 
-### 
+### Function module
+The most of function modules have two operating mode: *single file* and *directory batch*,
+you can switch the mode by checking the radio button in the top of the window.It is worth to notice that each module has only one function,such as the *Hippocampus segmentation* only do the hippocampus segment without any preprocessing.
 #### Dicom2Nifti
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/dicom.png)
+The input is the directory of the dicom image file and the output is the Nifti image file.
 #### Registration
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/reg.png)
+The input is the original image or directory of the original image file, the output is the registered image,if you do not choose the `ref image`.we will use the `MMNI ICBM-152(182*218*182 mm)` to register your image.
 #### Brain extraction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bet.png)
+The input is the image or directory of the image file, the output is the image with the brain and the mask of brain.
 #### Bias field correction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bfc.png)
+The input is the image or directory of the image file, the ouput is the processed image,You can choose to whether to do bias field correction and normalization.
 #### Hippocampus segmentation
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/hs.png)
+The input is the image or directory of the image file, the ouput is the mask of the hippocampus.The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).
 #### Brain tissue segmentation
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bs.png)
+The input is the image or directory of the origin image file, the ouput is the probability segmentation of gm, wm and csf. The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).
 #### Feature caculating
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/feature.png)
+The input is the image or directory of the image file, the ROI and image must have a one-to-one correspondence.  
+If you input one image, you have to input one mask file, and the parameters of nifti file between the image and the ROI is the same. If your input is a directory, the ROI must be a directory, and the sequence of the image in the image directory is the same as the sequence of the ROI in the ROI directory. 
+The ouput is a csv file, one file occupies one row, and features arranged in columns.
+## Operation Example
+
 ## References
 ````
 [1] Chen, Hao, et al. "VoxResNet: Deep Voxelwise Residual Networks for Volumetric Brain Segmentation." arXiv preprint arXiv:1608.05895 (2016).
