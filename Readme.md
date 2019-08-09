@@ -63,9 +63,14 @@ A detailed analysis report is given on the input image based on the reference ra
  derived from the inhouse datasets.
 ## Documentation
 There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.  
-#### Batch 
-![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/batch.png)
-It is recommended to use `batch` to process images.
+### Batch 
+![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/batch.png)  
+
+It is recommended to use `batch` to process images.You can use `batch` as follows:  
+1. Check the function you want by checking the checkbox on the left.
+2. Choose the input and ouput directory by click the button on the right.
+3. Click the Start button and wait for the completion.
+
 #### Dicom2Nifti
 ![image](https://github.com/gourdchen/BrainRadiomicsTools/blob/master/images/dicom.png)
 #### Registration

@@ -2,7 +2,7 @@ import itertools
 import chainer
 import numpy as np
 import nibabel as nib
-
+import time
 
 def load_nifti(filename, with_affine=False):
     """
@@ -152,8 +152,12 @@ def feedforward(model, image, input_shape, output_shape, n_tiles, n_classes):
             center.append(center[-1] + stride)
         center.append(img_len - len_out // 2)
     output = np.zeros((n_classes,) + image.shape[:-1])
+
+    print("[",time.strftime("%H:%M:%S", time.localtime()),"]"," Center Success")
+
     for x, y, z in itertools.product(*centers):
         patch = crop_patch(image, [x, y, z], input_shape)
+        print("[",time.strftime("%H:%M:%S", time.localtime()),"]"," Patch Sucess")
         patch = np.expand_dims(patch, 0)
         patch = model.xp.asarray(patch)
         slices_out = [slice(None)] + [

@@ -17,6 +17,7 @@ def brainSeg(test_df,output_path,model="./models/model9900.vrn",input_shape=[80,
 
     for image_path in test_df["image"]:
         image, affine = load_nifti(image_path, with_affine=True)
+        print("[",time.strftime("%H:%M:%S", time.localtime()),"]"," ImageLoad Success")
         output = feedforward(
             vrn,
             image,
