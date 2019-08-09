@@ -86,7 +86,7 @@ The input is the original image or directory of the original image file, the out
 The input is the image or directory of the image file, the output is the image with the brain and the mask of brain.
 #### Bias field correction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bfc.png)  
-The input is the image or directory of the image file, the ouput is the processed image,You can choose to whether to do bias field correction and normalization.
+The input is the image or directory of the image file, the ouput is the processed image,You can check bias field correction and normalization.
 #### Hippocampus segmentation 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/hs.png)  
 The input is the image or directory of the image file, the ouput is the mask of the hippocampus.The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).
@@ -96,7 +96,7 @@ The input is the image or directory of the origin image file, the ouput is the p
 #### Feature caculating
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/feature.png)  
 The input is the image or directory of the image file, the ROI and image must have a one-to-one correspondence.  
-If you input one image, you have to input one mask file, and the parameters of nifti file between the image and the ROI is the same. If your input is a directory, the ROI must be a directory, and the sequence of the image in the image directory is the same as the sequence of the ROI in the ROI directory. 
+If you input one image, you have to input one mask file, and the parameters of nifti file between the image and the ROI is the same. If your input is a directory, the ROI must be a directory, and the sequence of the image in the image directory is the same as the sequence of the ROI in the ROI directory.   
 The ouput is a csv file, one file occupies one row, and features arranged in columns.
 ## Operation Example
 
