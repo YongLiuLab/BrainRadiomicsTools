@@ -77,27 +77,35 @@ The most of function modules have two operating mode: *single file* and *directo
 you can switch the mode by checking the radio button in the top of the window.It is worth to notice that each module has only one function,such as the *Hippocampus segmentation* only do the hippocampus segment without any preprocessing.
 #### Dicom2Nifti
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/dicom.png)  
-The input is the directory of the dicom image file and the output is the Nifti image file.
+     &ensp;**Input**: the directory of the dicom image file  
+     &ensp;**Output**: the Nifti image file  
 #### Registration
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/reg.png)  
-The input is the original image or directory of the original image file, the output is the registered image,if you do not choose the `ref image`.we will use the `MMNI ICBM-152(182*218*182 mm)` to register your image.
+&ensp;**Input**: the original image or directory of the original image file.  
+&ensp;**Output**: the registered image.  
+If you do not choose the `ref image`, we will use the `MMNI ICBM-152(182*218*182 mm)` to register your image.
 #### Brain extraction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bet.png)  
-The input is the image or directory of the image file, the output is the image with the brain and the mask of brain.
+&ensp;**Input**: the image or directory of the image file.  
+&ensp;**Output**: the image with the brain and the mask of brain.  
 #### Bias field correction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bfc.png)  
-The input is the image or directory of the image file, the ouput is the processed image,You can check bias field correction and normalization.
+&ensp;**Input**: the image or directory of the image file.  
+&ensp;**Output**: the ouput is the processed image.  
+You can check bias field correction and normalization.
 #### Hippocampus segmentation 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/hs.png)  
-The input is the image or directory of the image file, the ouput is the mask of the hippocampus.The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).
+&ensp;**Input**: the image or directory of the image file. The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).  
+&ensp;**Output**: the ouput is the mask of the hippocampus.   
 #### Brain tissue segmentation
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bs.png)  
-The input is the image or directory of the origin image file, the ouput is the probability segmentation of gm, wm and csf. The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).
+&ensp;**Input**: The input is the image or directory of the origin image file The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).  
+&ensp;**Output**: The ouput is the probability segmentation of gm, wm and csf.  
 #### Feature caculating
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/feature.png)  
-The input is the image or directory of the image file, the ROI and image must have a one-to-one correspondence.  
+&ensp;**Input**: The image or directory of the image file, the ROI and image must have a one-to-one correspondence.  
 If you input one image, you have to input one mask file, and the parameters of nifti file between the image and the ROI is the same. If your input is a directory, the ROI must be a directory, and the sequence of the image in the image directory is the same as the sequence of the ROI in the ROI directory.   
-The ouput is a csv file, one file occupies one row, and features arranged in columns.
+&ensp;**Output**: a csv file, one file occupies one row, and features arranged in columns.
 ## Operation Example
 
 ## References
