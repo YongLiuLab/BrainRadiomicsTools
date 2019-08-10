@@ -1,19 +1,19 @@
 # BrainRadiomicsTools
 
-  BrainRadiomicsTools is a radiomics tool that includes multiple brain image processing tools.It has many functions 
-  such as registration、N4 bias correction、hippocampus segment and feature calculating.Now it can automatically 
+  BrainRadiomicsTools is a radiomics tools that includes multiple brain image processing tools. It has many functions 
+  such as registration、N4 bias correction、hippocampus segment and feature calculating. Now it can automatically 
   segment and calculate about 2000 radiomics features of the hippocampus.
-  **The feature about this tool is that it has a good user interface,you can do all the work with the mouse.**
+  **The feature about this tools is that it has a good user interface, you can do all the work with the mouse.**
   
 # Install
 
-  The tools is a python based program,it can execute in Windows now(some function may error in Linux and Mac OS),
+  The tools is a python based program, it can execute in Windows now(some function may error in Linux and Mac OS),
   The installation script is not completed yet, but here is a file `environment.yaml` and `requirement.txt` describing which python packages are required for this tool.
   
-  It is recommended to use Anaconda(Miniconda) for environment configuration,the most important package is theano,there will be
-  some problem in the installation of theano.The key of the installation is installing mingw by conda.
+  It is recommended to use Anaconda(Miniconda) for environment configuration, the most important package is theano, there will be
+  some problem in the installation of theano. The key of the installation is installing mingw by conda.
 
-  1. If you don't have conda envirment,please install the Anaconda or Miniconda
+  1. If you don't have conda envirment, please install the Anaconda or Miniconda
   2. Open the CMD.exe and use conda to create a new env such as : `conda create -n brainTools python=3.6`
   3. Then activate the conda env : `conda activate brainTools`
   4. Install the mingw by conda : `conda install mingw libpython -y`
@@ -36,7 +36,7 @@
 4. N4 bias correction
    `by ANTs / SimpleITK`
 ### Segmentation
-Segmentation functions include hippocampus segmentation and brain segmentation.The two neural networks are trained by inhouse datasets, and tools use the trained models.
+Segmentation functions include hippocampus segmentation and brain segmentation. The two neural networks are trained by inhouse datasets, and tools use the trained models.
 1. Hippocampus Segmentation  
    `by https://github.com/josedolz/LiviaNET`
    
@@ -45,7 +45,7 @@ Segmentation functions include hippocampus segmentation and brain segmentation.T
 ### Feature Calculating
 Calculate the radiomics features `by pyradiomics`.  
 Enable all the features and the following 9 image types,the inputs include the origin image and the ROI.  
-Because of some problems about configure file, now the features can not be customized,and it will update later.
+Because of some problems about configure file, now the features can not be customized, and it will update later.
  ````
     Original  
     LoG
@@ -57,13 +57,13 @@ Because of some problems about configure file, now the features can not be custo
     Exponential
     LBP3D
  ````
-More about the pyradiomics,you can see the documentation of it:  https://pyradiomics.readthedocs.io/en/latest/
+More about the pyradiomics, you can see the documentation of it:  https://pyradiomics.readthedocs.io/en/latest/
 ### Analysis
 A comparison of the parameters of the input image is performed using an inhouse dataset as a reference (beta).  
 A detailed analysis report is given on the input image based on the reference range of brain volume and radiomics features
  derived from the inhouse datasets.
 # Documentation
-There are many functions in the software,each of them can be used independently,so it is very flexible to use this software.It is recommended to use *batch* to process images,and you can also use  *function module* to process images.  
+There are many functions in the software,each of them can be used independently,so it is very flexible to use this software. It is recommended to use *batch* to process images,and you can also use  *function module* to process images.  
 ## Batch 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/batch.png)  
 
@@ -83,7 +83,7 @@ you can switch the mode by checking the radio button in the top of the window.It
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/reg.png)  
 &ensp;**Input**: the original image or directory of the original image file.  
 &ensp;**Output**: the registered image.  
-If you do not choose the `ref image`, we will use the `MMNI ICBM-152(182*218*182 mm)` to register your image.
+&ensp;If you do not choose the `ref image`, we will use the `MMNI ICBM-152(182*218*182 mm)` to register your image.
 ### Brain extraction
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bet.png)  
 &ensp;**Input**: the image or directory of the image file.  
@@ -92,7 +92,7 @@ If you do not choose the `ref image`, we will use the `MMNI ICBM-152(182*218*182
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/bfc.png)  
 &ensp;**Input**: the image or directory of the image file.  
 &ensp;**Output**: the ouput is the processed image.  
-You can check bias field correction and normalization.
+&ensp;You can check bias field correction and normalization.
 ### Hippocampus segmentation 
 ![image](https://github.com/YongLiuLab/BrainRadiomicsTools/blob/master/images/hs.png)  
 &ensp;**Input**: the image or directory of the image file. The input need to be registerd with `MMNI ICBM-152(182*218*182 mm)` (roughly is ok).  
