@@ -47,7 +47,7 @@ class Segment(QDialog):
         self.thread.trigger.connect(self.process)
         self.thread.start()
     def process(self,p):
-        if(p==1):
+        if(p==0):
             self.ui.run_pushButton.setDisabled(False)
             QMessageBox.information(self, "Information", "Calculate Done!", QMessageBox.Yes)
         else:
@@ -70,8 +70,8 @@ class RunThread(QThread):
         self.wait()
 
     def run(self):
-        segment(self.filename_input,self.directory_output,self.Type)
-        self.trigger.emit(1)
+        p = segment(self.filename_input,self.directory_output,self.Type)
+        self.trigger.emit(p)
 
     def callback(self, msg):
         # self._signal.emit(msg)

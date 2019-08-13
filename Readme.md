@@ -18,6 +18,7 @@
   3. Then activate the conda env : `conda activate brainTools`
   4. Install the mingw by conda : `conda install mingw libpython -y`
   5. Install the packages by pip :  `pip install -r requirement.txt`
+  Some python package may fail to install, you can download the compiled package to install.
 
   In the end, ensure the new env is activated and use the `python Main.py` to run tool after completing the dependency package installation.
 
