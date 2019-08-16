@@ -206,7 +206,7 @@ class batchCal(QThread):
             if (self.isFeature):
                 self.csvMerg()
         except Exception as e:
-            print(str(e))
+            print(e)
             self.signal.emit(-1)
             self.strSignal.emit(str(e))
             return

@@ -37,6 +37,10 @@ def brainSeg(test_df,output_path,model="./models/model9900.vrn",input_shape=[80,
         #     gm_path = output_path
         # 传入的输出文件夹 batch模式和dir 模式
 
+        gm_data = np.float32(gm_data)
+        wm_data = np.float32(wm_data)
+        csf_data = np.float32(csf_data)
+        
         gm_path = os.path.join(output_path,'gm_'+os.path.basename(image_path))
 
         wm_path = os.path.join(output_path,"wm_"+os.path.basename(image_path))
