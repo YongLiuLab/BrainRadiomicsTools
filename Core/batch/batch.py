@@ -61,7 +61,7 @@ class batchCal(QThread):
             os.mkdir(n4Temp)
         outPath = os.path.join(n4Temp,os.path.basename(path))
 
-        N4correctWin(path, outPath, isNorm=False, isBFC=True)
+        N4correctWin(path, outPath, isNorm=True, isBFC=True)
 
         self.progress += 1
         self.signal.emit(self.progress)
