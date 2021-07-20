@@ -67,13 +67,14 @@ def N4correct(inputImage,outputImage ,maskImage=None,isNorm=False,isBFC=True):
         corrector.SetMaximumNumberOfIterations([50]*4)
 
         print("input : origin:",input.GetOrigin(),"Mask : origin:",mask.GetOrigin())
-        output = corrector.Execute(input)
+        output = corrector.Execute(input,mask)
 
         del  corrector
-        del  mask
+        #del  mask
     if isNorm:
         data = sitk.GetArrayFromImage(output)
-        data = (data - np.mean(data.flatten()))/np.std(data.flatten())
+        maskData = sitk.GetArrayFromImage(mask)
+        data[maskData>0] = (data[maskData>0] - np.min(data[maskData>0]))/(np.max(data[maskData>0])-np.min(data[maskData>0]))
         output = sitk.GetImageFromArray(data)
     output.SetDirection(direction)
     output.SetSpacing(spacing)
