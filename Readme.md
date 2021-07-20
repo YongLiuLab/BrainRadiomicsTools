@@ -16,10 +16,10 @@
   1. If you don't have conda envirment, please install the Anaconda or Miniconda
   2. Open the CMD.exe and use conda to create a new env such as : `conda create -n brainTools python=3.6`
   3. Then activate the conda env : `conda activate brainTools`
-  4. Install the mingw by conda : `conda install mingw libpython -y`
+  4. Install the mingw by conda : `conda install m2w64-toolchain -c anaconda libpython -y`
   5. Install the packages by pip :  `pip install -r requirement.txt`
   Some python package may fail to install, you can download the compiled package to install.
-
+  The 'dipy' maybe need to uninstall and install manually.
   In the end, ensure the new env is activated and use the `python Main.py` to run tool after completing the dependency package installation.
 
 # User Interface
